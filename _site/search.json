@@ -1,0 +1,114 @@
+[
+  {
+    "objectID": "index.html#collaborators",
+    "href": "index.html#collaborators",
+    "title": "Authentic Data Science Assessments in a Computer-Based Testing Environment",
+    "section": "Collaborators",
+    "text": "Collaborators\n\n\n\nKatie Burak\nAssistant Professor of Teaching\nDepartment of Statistics, UBC\n\n\n\nHedayat Zarkoob\nPostdoctoral Research and Teaching Fellow\nDepartment of Computer Science, UBC\n\n\n\nFiras Moosvi\nLecturer\nDepartment of Computer Science, UBC"
+  },
+  {
+    "objectID": "index.html#mds-academic-team",
+    "href": "index.html#mds-academic-team",
+    "title": "Authentic Data Science Assessments in a Computer-Based Testing Environment",
+    "section": "MDS Academic team",
+    "text": "MDS Academic team\nWe would also like to acknowledge the academic team of UBC’s MDS program for their contributions to the courses that informed this project:\n\n\n\nVarada Kolhatkar\n\nTiffany Timbers\nPrajeet Bajpai\n\nDaniel Chen\n\nGittu George\n\n\n\n\nPayman Nickchi\n\nJoel Östblom\n\nAlexi Rodríguez-Arelis\n\nAndy Tai"
+  },
+  {
+    "objectID": "index.html#motivation",
+    "href": "index.html#motivation",
+    "title": "Authentic Data Science Assessments in a Computer-Based Testing Environment",
+    "section": "Motivation",
+    "text": "Motivation\n\nHave you ever tried to assess a coding-based learning objective in an LMS platform like Canvas or Blackboard?"
+  },
+  {
+    "objectID": "index.html#limitations-of-traditional-platforms",
+    "href": "index.html#limitations-of-traditional-platforms",
+    "title": "Authentic Data Science Assessments in a Computer-Based Testing Environment",
+    "section": "Limitations of Traditional Platforms",
+    "text": "Limitations of Traditional Platforms\n\n\nLack of an IDE (e.g., RStudio, Jupyter Notebooks) forces students to code in unfamiliar environments\nInauthentic assessment of student skills\nInability to use testing frameworks\nNo immediate feedback for students\nWe need a way for students to use computing environments they’re comfortable with, while maintaining exam integrity…"
+  },
+  {
+    "objectID": "index.html#computer-based-testing-facility",
+    "href": "index.html#computer-based-testing-facility",
+    "title": "Authentic Data Science Assessments in a Computer-Based Testing Environment",
+    "section": "Computer-Based Testing Facility",
+    "text": "Computer-Based Testing Facility\n\nUBC’s Computer-Based Testing Facility (CBTF) is platform agnostic and helps instructors run digital assessments at scale\n\n\n\nSource: https://cbtf.ubc.ca/"
+  },
+  {
+    "objectID": "index.html#why-a-computer-based-testing-environment",
+    "href": "index.html#why-a-computer-based-testing-environment",
+    "title": "Authentic Data Science Assessments in a Computer-Based Testing Environment",
+    "section": "Why a Computer-Based Testing Environment?",
+    "text": "Why a Computer-Based Testing Environment?\n\nThe demand for applied statistics and data science education is growing and so is the need for effective assessment tools.\nAuthentic assessments should mirror real-world applications.\nProviding access to proper coding environments and IDEs helps bridge the gap between academic assessments and real-world tools.\nHelps address concerns about the irresponsible use of GenAI by students.\nPromotes equity and inclusion by standardizing the computing environment, ensuring assessments measure understanding rather than access to personal hardware or resources."
+  },
+  {
+    "objectID": "index.html#prairielearn",
+    "href": "index.html#prairielearn",
+    "title": "Authentic Data Science Assessments in a Computer-Based Testing Environment",
+    "section": "PrairieLearn",
+    "text": "PrairieLearn\n\nDeveloped at the University of Illinois, PrairieLearn supports dynamic question banks with randomized variants (West, Herman & Zilles, 2015).\nEnables the creation of realistic, code-based assessments.\nSupports automated feedback for students.\nAutomatically evaluate coding functionality through test functions.\nPromotes efficiency in exam creation by allowing for question banks that evolve and expand over time."
+  },
+  {
+    "objectID": "index.html#asynchronous-assessment",
+    "href": "index.html#asynchronous-assessment",
+    "title": "Authentic Data Science Assessments in a Computer-Based Testing Environment",
+    "section": "Asynchronous Assessment",
+    "text": "Asynchronous Assessment\nRandomized asynchronous assessments provide several key benefits, including:\n\n\nIncreased flexibility for students\nScalable question banks that can be expanded and refined over time\nReduced instructional workload by eliminating the need to create new exams each year\nReduced time allocated to manually grading questions"
+  },
+  {
+    "objectID": "index.html#master-of-data-science-program",
+    "href": "index.html#master-of-data-science-program",
+    "title": "Authentic Data Science Assessments in a Computer-Based Testing Environment",
+    "section": "Master of Data Science Program",
+    "text": "Master of Data Science Program\n\nWe implemented asynchronous computer-based assessments in UBC’s Master of Data Science (MDS) program this year.\nLeveraging data from the MDS program, our objectives are to explore the impact of asynchronous assessments facilitated by PrairieLearn on student learning and performance."
+  },
+  {
+    "objectID": "index.html#mds-program-overview",
+    "href": "index.html#mds-program-overview",
+    "title": "Authentic Data Science Assessments in a Computer-Based Testing Environment",
+    "section": "MDS Program Overview",
+    "text": "MDS Program Overview\n\nMDS is structured as an intense 10-month cohort-based program.\nAttracts a diverse cohort from various academic backgrounds.\nTwo semesters are divided into six “blocks” each consisting of four month-long courses covering topics in statistics, machine learning, computing and data science.\nThe program wraps up with a 2-month industry capstone project.\nData tracks students across multiple courses over time.\n\n\n\n\n\n\nflowchart LR\n    A[Block 1] --&gt; B[Block 2]\n    B --&gt; C[Block 3]\n    C --&gt; D[Block 4]\n    D --&gt; E[Block 5]\n    E --&gt; F[Block 6]\n    F --&gt; G{Capstone}"
+  },
+  {
+    "objectID": "index.html#canvas-prairielearn",
+    "href": "index.html#canvas-prairielearn",
+    "title": "Authentic Data Science Assessments in a Computer-Based Testing Environment",
+    "section": "Canvas –> PrairieLearn",
+    "text": "Canvas –&gt; PrairieLearn\n\n\nMapped existing exam questions to course learning objectives for clear organization and efficient assessment design.\nIncorporated randomization in questions:\n\nVariable parameters for dynamic question content.\nCreated multiple variants maintaining consistent difficulty levels.\n\nLet’s take a look at a simple sample question!"
+  },
+  {
+    "objectID": "index.html#the-data",
+    "href": "index.html#the-data",
+    "title": "Authentic Data Science Assessments in a Computer-Based Testing Environment",
+    "section": "The Data",
+    "text": "The Data\n\nDeidentified data of 150 students from the first two blocks of MDS.\n2 PrairieLearn quizzes per course taken in a 5-day quiz window.\n8 courses over a 2-month span:\n\nProgramming for Data Science\nComputing Platforms for Data Science\nData Wrangling\nDescriptive Statistics and Probability for Data Science\nAlgorithms and Data Structures\nData Visualization I\nStatistical Inference and Computation I\nSupervised Learning I"
+  },
+  {
+    "objectID": "index.html#results",
+    "href": "index.html#results",
+    "title": "Authentic Data Science Assessments in a Computer-Based Testing Environment",
+    "section": "Results",
+    "text": "Results"
+  },
+  {
+    "objectID": "index.html#results-1",
+    "href": "index.html#results-1",
+    "title": "Authentic Data Science Assessments in a Computer-Based Testing Environment",
+    "section": "Results",
+    "text": "Results"
+  },
+  {
+    "objectID": "index.html#discussion",
+    "href": "index.html#discussion",
+    "title": "Authentic Data Science Assessments in a Computer-Based Testing Environment",
+    "section": "Discussion",
+    "text": "Discussion\n\nWe found that performance was overall better for students who wrote their exams earlier in the quiz window.\nQuiz performance remains fairly consistent over time, possibly suggesting that students are not attempting to “game” the system.\nThese results are in line with a study conducted at the University of Illinois using the PrairieLearn system titled “How Much Randomization is Needed to Deter Collaborative Cheating on Asynchronous Exams?”\nFolks found that using randomized sets of three or four problems with varying parameters is an effective way to reduce collaborative cheating.\nOver time, we aim to expand our question banks and introduce more layers of randomization.\n\n\nChen, B., West, M., & Zilles, C. (2018, June). How much randomization is needed to deter collaborative cheating on asynchronous exams?. In Proceedings of the fifth annual ACM conference on learning at scale (pp. 1-10)."
+  },
+  {
+    "objectID": "index.html#section",
+    "href": "index.html#section",
+    "title": "Authentic Data Science Assessments in a Computer-Based Testing Environment",
+    "section": "",
+    "text": "Thank you! Questions?"
+  }
+]

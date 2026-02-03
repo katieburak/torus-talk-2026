@@ -1,0 +1,13 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Authentic Data Science Assessments in a Computer-Based Testing Environment"
+  navbar: false  # hide the top nav (optional)
+
+format:
+  html:
+    theme: default
+
+

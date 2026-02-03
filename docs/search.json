@@ -7,6 +7,13 @@
     "text": "About Me\n\n\n\n\n\n\nKatie Burak\nAssistant Professor of Teaching, Department of Statistics, UBC https://katieburak.github.io/"
   },
   {
+    "objectID": "index.html#section",
+    "href": "index.html#section",
+    "title": "An Introduction to Data Privacy in Practice",
+    "section": "",
+    "text": "https://katieburak.github.io/torus-talk-2026/"
+  },
+  {
     "objectID": "index.html#attribution",
     "href": "index.html#attribution",
     "title": "An Introduction to Data Privacy in Practice",
@@ -28,8 +35,8 @@
     "text": "Learning Objectives\nBy the end of today’s lesson, you should be able to:\n\n\nUnderstand key terms in data privacy, including PII, pseudonymization, and anonymization\nIdentify direct and indirect identifiers in sample data sets\nExplain why de-identification is challenging and context-dependent\nApply basic de-identification techniques (e.g., suppression, top-coding, permutation) using R\nRecognize the tradeoff between data utility and privacy risk"
   },
   {
-    "objectID": "index.html#section",
-    "href": "index.html#section",
+    "objectID": "index.html#section-1",
+    "href": "index.html#section-1",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "",
     "text": "Even something as simple as your Facebook “likes” can reveal a lot more than you think…\nResearchers at Cambridge showed that algorithms could predict:\n\nSexual orientation with up to 88% accuracy\nRace with 95% accuracy\nPolitical affiliation with 85% accuracy\n\nAll from analyzing the pages and posts you “liked” (no profile bio or messages needed)!\n\n\nhttps://www.cam.ac.uk/research/news/digital-records-could-expose-intimate-details-and-personality-traits-of-millions"
@@ -126,8 +133,8 @@
     "text": "De-identification Techniques\nTechniques to deidentify your data include:\n\nSuppression\nGeneralization\nReplacement\nTop- and bottom coding\nAdding noise\nPermutation\n\nWe will talk about each of these techniques individually."
   },
   {
-    "objectID": "index.html#section-1",
-    "href": "index.html#section-1",
+    "objectID": "index.html#section-2",
+    "href": "index.html#section-2",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "",
     "text": "First, let’s generate some data we can use to help illustrate these concepts.\n\n\n# A tibble: 4 × 3\n  name             age height_cm\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;\n1 Joel Miller       52       182\n2 Ellie Williams    19       160\n3 Tommy Miller      48       185\n4 Abby Anderson     28       173"
@@ -189,8 +196,8 @@
     "text": "Hashing\n\nHashing converts names into fixed-length, irreversible strings.\nUnlike pseudonyms, hashed values cannot be easily reversed.\nIn R, we can use the digest package (and function) to hash.\n\n\n\n# A tibble: 4 × 3\n# Rowwise: \n  name_hash                          age height_cm\n  &lt;chr&gt;                            &lt;dbl&gt;     &lt;dbl&gt;\n1 4a3e0ee26ab3fb1338e893f4d4e7244b    52       182\n2 201943dd66d423ed3cce2242a75736d4    19       160\n3 81699ec9483bad176eed57ee43ffa010    48       185\n4 046dff9ba9cf33573396f4de8c0c0e0b    28       173"
   },
   {
-    "objectID": "index.html#section-2",
-    "href": "index.html#section-2",
+    "objectID": "index.html#section-3",
+    "href": "index.html#section-3",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "",
     "text": "What happens if we juse apply digest to the name vector without using rowwise?\n\n\ndigest hashed the entire name column as a single object (it’s not vectorized), so mutate recycled the same hash to every row (which is not what we want)."
@@ -350,8 +357,8 @@
     "text": "\\(l\\)-diversity\n\n\\(l\\)-diversity is an extension of \\(k\\)-anonymity that ensures sufficient variation in a sensitive attribute.\nThis is important because if all individuals within a group share the same sensitive value, there is still a risk of inference."
   },
   {
-    "objectID": "index.html#section-3",
-    "href": "index.html#section-3",
+    "objectID": "index.html#section-4",
+    "href": "index.html#section-4",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "",
     "text": "Although these data are \\(2\\)-anonymous, we can still infer that any 30-39 year old from Calgary who participated earns between 90-99k.\n\n\n\n\n\nAge Range\n\n\nCity\n\n\nSalary Range\n\n\n\n\n\n\n30–39\n\n\nCalgary\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\nToronto\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\nVancouver\n\n\n80,000–89,999\n\n\n\n\n40–49\n\n\nCalgary\n\n\n110,000–119,999\n\n\n\n\n30–39\n\n\nVancouver\n\n\n110,000–119,999\n\n\n\n\n30–39\n\n\nCalgary\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\nToronto\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\nVancouver\n\n\n80,000–89,999\n\n\n\n\n30–39\n\n\nToronto\n\n\n100,000–109,999\n\n\n\n\n40–49\n\n\nCalgary\n\n\n90,000–99,999"
@@ -364,8 +371,8 @@
     "text": "\\(l\\)-diversity\n\nThe approach requires at least \\(l\\) different values for the sensitive attribute within each combination of quasi-identifiers.\nAgain, there is no perfect value for \\(l\\) (typically \\(1&lt; l \\leq k\\))."
   },
   {
-    "objectID": "index.html#section-4",
-    "href": "index.html#section-4",
+    "objectID": "index.html#section-5",
+    "href": "index.html#section-5",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "",
     "text": "With \\(l=2\\), that means that for each combination of Age Range and City, there are at least 2 distinct Salary Ranges.\n\n\n\n\n\nAge Range\n\n\nCity\n\n\nSalary Range\n\n\n\n\n\n\n30–39\n\n\n-\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\n-\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\n-\n\n\n80,000–89,999\n\n\n\n\n40–49\n\n\nCalgary\n\n\n110,000–119,999\n\n\n\n\n30–39\n\n\n-\n\n\n110,000–119,999\n\n\n\n\n30–39\n\n\n-\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\n-\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\n-\n\n\n80,000–89,999\n\n\n\n\n30–39\n\n\n-\n\n\n100,000–109,999\n\n\n\n\n40–49\n\n\nCalgary\n\n\n90,000–99,999"
@@ -392,15 +399,15 @@
     "text": "Differential privacy\n\nSo, we may need more sophisticated tools to privatize our data…\nDifferential privacy is a mathematical approach to protecting privacy\nIt ensures algorithm results are nearly the same whether one person’s data is included or not\nDifferential privacy makes it hard to tell if any individual’s data is in the dataset, which protects individual’s information (even with unusual or unique data)"
   },
   {
-    "objectID": "index.html#section-5",
-    "href": "index.html#section-5",
+    "objectID": "index.html#section-6",
+    "href": "index.html#section-6",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "",
     "text": "Source: https://medium.com/data-science/a-differential-privacy-example-for-beginners-ef3c23f69401"
   },
   {
-    "objectID": "index.html#section-6",
-    "href": "index.html#section-6",
+    "objectID": "index.html#section-7",
+    "href": "index.html#section-7",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "",
     "text": "Differential privacy is a complex topic and goes beyond the scope of this course\n\nFor a clear and accessible explanation, check out this short video:"
@@ -434,8 +441,8 @@
     "text": "Key Takeaways\n\nRemoving direct identifiers alone does not guarantee privacy\n\nQuasi-identifiers can lead to re-identification if not protected\n\n\\(k\\)-anonymity makes each record indistinguishable from at least \\(k - 1\\) others\n\\(l\\)-diversity improves protection by promoting diversity in sensitive attributes\nDifferential privacy offers mathematical privacy guarantees\n\nChoosing privacy parameters involves balancing risk and data utility"
   },
   {
-    "objectID": "index.html#section-7",
-    "href": "index.html#section-7",
+    "objectID": "index.html#section-8",
+    "href": "index.html#section-8",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "",
     "text": "Thank you! Questions?"

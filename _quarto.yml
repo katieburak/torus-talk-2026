@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Authentic Data Science Assessments in a Computer-Based Testing Environment"
+  title: "An Introduction to Data Privacy in Practice"
   navbar: false  # hide the top nav (optional)
 
 format:

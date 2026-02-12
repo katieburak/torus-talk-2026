@@ -4,10 +4,12 @@ subtitle: "Torus Talk - MacEwan University, March 2026"
 format: 
   revealjs:
     embed-resources: true
+    scrollable: true
 editor: visual
 theme: [solarized, themer.scss]
 author:
   - name: Katie Burak
+ 
 ---
 
 ## About Me
@@ -41,8 +43,6 @@ Assistant Professor of Teaching, Department of Statistics, UBC
 ## Attribution
 <br><br>
 
-*This material is adapted from the following sources:* 
-
 - [*DSCI 200 - Navigating Data: Acquisition, Exploration and Management, UBC*](https://ubc-dsci.github.io/dsci-200/) ⭐️
 - [*Data Privacy Handbook*](https://utrechtuniversity.github.io/dataprivacyhandbook/) 
 - [*DSCI 541: Privacy, Ethics, and Security at UBC*](https://ubc-mds.github.io/course-descriptions/DSCI_541_priv-eth-sec/)
@@ -54,12 +54,8 @@ Assistant Professor of Teaching, Department of Statistics, UBC
 
 ## What Are You Comfortable Sharing?
 
-
-
 ::: column
-Consider different types of data:
 
-:::incremental
 - Your favorite type of music  
 - Your Instagram likes and follows  
 - Your e-mail  
@@ -67,7 +63,6 @@ Consider different types of data:
 - Your GPS location throughout the day 
 - Your browsing history
 - Your private messages/DMs  
-:::
 :::
 
 ::: column
@@ -79,19 +74,14 @@ Consider different types of data:
 :::
 :::
 
-## Learning Objectives
+## 
 
-By the end of today's lesson, you should be able to:
 
-:::incremental
-- Understand key terms in data privacy, including PII, pseudonymization, and anonymization
+![](img/amazon.png)
 
-- Identify direct and indirect identifiers in sample data sets
-- Explain why de-identification is challenging and context-dependent
-- Apply basic de-identification techniques (e.g., suppression, top-coding, permutation) using R
-- Recognize the tradeoff between data utility and privacy risk
-:::
-
+<div style="font-size: 0.6em; text-align: center; color: gray;">
+Source: <a href="https://www.cbc.ca/news/business/amazon-fine-alexa-ring-1.6862761" target="_blank">CBC News</a>
+</div>
 
 ## 
 
@@ -173,7 +163,7 @@ Separately, a publicly available dataset includes information from a local runni
 
 ## Pseudonymization and Anonymization
 
-- Pseudonymisation and a nonymisation are techniques to de-identify personal data
+- Pseudonymization and anonymization are techniques to de-identify personal data
 - Goal: reduce linkability of data to individuals
 - We will now define each of these terms 
 
@@ -195,7 +185,7 @@ Separately, a publicly available dataset includes information from a local runni
 - Data are anonymized when no individual is identifiable (directly or indirectly)
 - This applies even to the data controller
 - Fully anonymized data are no longer personal data
-- Anonymisation is difficult to achieve in practice
+- Anonymization is difficult to achieve in practice
 :::
 
 ## Identifiability Spectrum
@@ -222,12 +212,6 @@ Separately, a publicly available dataset includes information from a local runni
 - De-identification can be reversed
 :::
 
-## Context Matters
-
-- Whether data are anonymous depends on:
-  - The context of the research
-  - Available external information
-  - Future data uses
 
 ## De-identification Techniques
 
@@ -240,13 +224,12 @@ Techniques to deidentify your data include:
 - Adding noise
 - Permutation
 
-We will talk about each of these techniques individually. 
 
 ## 
 
 First, let's generate some data we can use to help illustrate these concepts. 
 
-```{r}
+```{r echo=TRUE}
 library(tidyverse)
 
 df <- tibble(
@@ -271,7 +254,7 @@ df
 
 ## Suppression Example
 
-```{r}
+```{r echo=TRUE}
 df_suppressed <- df |>
   select(-name)
 
@@ -287,15 +270,15 @@ df_suppressed
 - Examples:
   - Convert date of birth to age, or group into ranges
   - Replace address with town or region
-  - Recategorise rare labels into “other” or “missing”
+  - Recategorize rare labels into “other” or “missing”
   - Abstract people or places in qualitative data (e.g., “Bob” to “[colleague]”)
 :::
 
-## Generalization Example
+## 
 
 Here we will show an example of generalization on the `age` column: 
 
-```{r}
+```{r echo=TRUE}
 df_generalized <- df |>
   mutate(age_group = case_when(
     age < 30 ~ "under 30",
@@ -329,7 +312,7 @@ df_generalized
 
 ## Replacement with Pseudonyms
 
-```{r}
+```{r echo=TRUE}
 df_pseudonymized <- df |>
   mutate(pseudonym = paste0("ID", row_number())) |>
   select(pseudonym, everything(), -name)
@@ -343,7 +326,10 @@ df_pseudonymized
 - Unlike pseudonyms, hashed values cannot be easily reversed.
 - In R, we can use the `digest` package (and function) to hash. 
 
-```{r}
+
+## 
+
+```{r echo=TRUE}
 library(digest) 
 
 df_hashed <- df |>
@@ -353,17 +339,7 @@ df_hashed <- df |>
 
 df_hashed
 ```
-## 
 
-- What happens if we juse apply `digest` to the name vector without using `rowwise`?
-
-```{r}
-df_hashed <- df |>
-  mutate(name_hash = digest(name)) |>
-  select(name_hash, everything(), -name)
-```
-
-- `digest` hashed the entire name column as a single object (it’s not vectorized), so `mutate` recycled the same hash to every row (which is not what we want).
 
 ## Top- and Bottom-Coding
 
@@ -378,7 +354,7 @@ df_hashed <- df |>
 
 - Consider 6ft (182.88cm) is considered our maximum height threshold.
 
-```{r}
+```{r echo=TRUE}
 df_top_coded <- df |>
   mutate(height_cm = if_else(height_cm > 182.88, 182.88, height_cm))
 
@@ -392,13 +368,10 @@ df_top_coded
 - Examples:
   - Add a small random amount to numeric values
   - Blur images or alter voices
-  - Use differential privacy algorithms (advanced)
 
 ## Adding Noise to Height
 
-This adds random noise to the height variable from a normal distribution ($\mu=0$, $\sigma=2$), reducing exact re-identification risk.
-
-```{r}
+```{r echo=TRUE}
 set.seed(200) 
 
 df_noisy <- df |>
@@ -421,10 +394,7 @@ df_noisy
 
 ## Permutation of Height Values
 
-Here, the `height_cm` values are shuffled between individuals, preserving the overall distribution but breaking the link between person and value.
-
-
-```{r}
+```{r echo=TRUE}
 set.seed(200)
 
 df_permuted <- df |>
@@ -442,15 +412,6 @@ df_permuted
 
 >[https://www.researchgate.net/figure/Trade-off-between-privacy-level-and-utility-level-of-data_fig1_357987903](https://www.researchgate.net/figure/Trade-off-between-privacy-level-and-utility-level-of-data_fig1_357987903)
 
-## Key Takeaways
-
-- Data exists on a spectrum of identifiability 
-- Even seemingly anonymous data can often be re-identified (e.g., mosaic effect)
-- Different techniques offer varying levels of protection and utility
-- Context, external data and technological capabilities all affect re-identification risk
-- Responsible data handling requires both technical skill and ethical awareness
-
-
 ## Case Study: Brogan Inc. and NIHB Data
 
 - The Non-Insured Health Benefits (NIHB) database contains sensitive health data on First Nations use of services like prescriptions, dental care, and medical devices.
@@ -463,47 +424,33 @@ df_permuted
 
 ## Discussion
 
-Take 5 minutes to discuss this case in groups of 2-3. Consider these questions to reflect on:
-
 - Was the data truly de-identified? 
-- Should de-identified data still require community consent before being shared or sold?
 - What are the limits of simply removing names and IDs from a dataset?
 - How can we measure whether a dataset is truly “safe” to release?
+- Should de-identified data still require community consent before being shared or sold?
 
-## Learning Objectives
-
-By the end of today's lesson, you should be able to:
-
-- Define identifiers, quasi-identifiers and sensitive attributes in data sets  
-- Explain the limitations of basic deidentification methods  
-- Describe the concepts of $k$-anonymity, $l$-diversity and $t$-closeness  
-- Apply $k$-anonymity and $l$-diversity to de-identify data 
-- Understand the basic idea of differential privacy and its significance  
 
 ## Why basic deidentification isn't always enough
 
-- Last class, we introduced some techniques for deidentification such as suppression and generalization.
-
-- However, individuals can often be re-identified using other information.
+- Individuals can often be re-identified using other information.
 
 - As datasets become more detailed and linkable, privacy risks increase.
 
-- Statistical methods are needed to ensure meaningful deidentification while preserving data utility.
+- More advanced statistical methods are often needed to ensure meaningful deidentification while preserving data utility.
 
 ## Statistical approaches to deidentification 
 <br></br>
 
 - $k$-anonymity  
 - $l$-diversity  
-- $t$-closeness  
 - Differential privacy (advanced)
 
 ## Overview of privacy models
 
-- $k$-anonymity, $l$-diversity, and $t$-closeness are **statistical approaches** that quantify the level of identifiability within a tabular dataset.  
+- $k$-anonymity and $l$-diversity are **statistical approaches** that quantify the level of identifiability within a tabular dataset.  
 - They focus on how variables combined can lead to identification.  
-- These approaches are complementary: a dataset can be simultaneously $k$-anonymous, $l$-diverse, and $t$-close, where $k$, $l$, and $t$ represent numeric thresholds.
--  $k$-anonymity, $l$-diversity, and $t$-closeness are typically used to de-identify tabular datasets *before* sharing.
+- These approaches are complementary: a dataset can be simultaneously $k$-anonymous and $l$-diverse, where $k$ and $l$ represent numeric thresholds.
+-  $k$-anonymity and $l$-diversityare typically used to de-identify tabular datasets *before* sharing.
 - They work best on relatively large datasets, where enough observations are present to preserve useful detail while still protecting privacy.
 
 
@@ -606,6 +553,78 @@ Privacy models distinguish between three types of variables:
   </tbody>
 </table>
 
+##
+
+Given the data, which field(s) could you generalize to help achieve **k = 3 anonymity**?
+
+<div style="font-size:0.8em; max-width: 400px; margin: auto;">
+
+| Age | ZIP Code | Disease   |
+|-----|----------|-----------|
+| 29  | 13053    | Flu       |
+| 27  | 13068    | Flu       |
+| 28  | 13068    | Cold      |
+| 45  | 14853    | Diabetes  |
+| 46  | 14853    | Diabetes  |
+| 47  | 14853    | Cancer    |
+
+</div>
+
+- A. Generalize Age into age ranges (e.g., 20–29, 40–49)  
+- B. Suppress Disease entirely  
+- C. Generalize ZIP Code to first 3 digits (e.g., 130**, 148**)  
+- D. Generalize Age into age ranges (e.g., 20–29, 40–49) and ZIP code to first 3 digits (e.g., 130**, 148**)  
+- E. It's already $k=3$ anonymous
+
+## 
+
+Which of the following datasets violates $k = 2$ anonymity?
+
+::: columns
+
+:::: column
+
+**Option A**
+
+| Age | Sex | ZIP   |
+|-----|--------|-------|
+| 34  | M      | 02138 |
+| 34  | M      | 02138 |
+| 34  | F      | 02139 |
+
+::::
+
+:::: column
+
+**Option B**
+
+| Age | Sex | ZIP   |
+|-----|--------|-------|
+| 22  | F      | 10011 |
+| 22  | F      | 10011 |
+| 22  | F      | 10011 |
+
+::::
+
+:::: column
+
+**Option C**
+
+| Age Range | Sex | ZIP Prefix |
+|-----------|--------|------------|
+| 30–39     | *      | 021**      |
+| 30–39     | *      | 021**      |
+| 30–39     | *      | 021**      |
+
+::::
+
+:::
+
+- A. Only A  
+- B. Only B  
+- C. Only C  
+- D. A and B  
+
 
 ## $l$-diversity
 
@@ -667,14 +686,29 @@ Privacy models distinguish between three types of variables:
 </table>
 
 
-## $t$-closeness
+##
 
-:::incremental
-- $t$-closeness builds on k-anonymity and l-diversity by requiring that the distribution of the sensitive attribute within each group of quasi-identifiers is close to the distribution in the full dataset.
-- This prevents situations where a sensitive value is overly dominant in a group, which could allow re-identification through skewed distributions.
-- For example, in a dataset with Age and Sex as quasi-identifiers and Income as the sensitive attribute, applying t-closeness with $t = 0.1$ means the income distribution in each group must stay within 10\% of the overall income distribution.
-- In this course, we will focus mainly on $k$-anonymity and $l$-diversity as $t$-closeness can get complicated to implement.
-:::
+Consider this 3-anonymous dataset. Is it also 2-diverse with respect to "Condition"?
+
+<div style="font-size:0.8em; max-width: 400px; margin: auto;">
+
+| Age Range | ZIP Prefix | Condition |
+|-----------|------------|-----------|
+| 20–29     | 130**      | Flu       |
+| 20–29     | 130**      | Flu       |
+| 20–29     | 130**      | Flu       |
+| 30–39     | 148**      | Cold      |
+| 30–39     | 148**      | Cold      |
+| 30–39     | 148**      | Cancer    |
+
+</div>
+
+- A. Yes, both groups have 2 or more different values  
+- B. No, one group violates l-diversity  
+- C. Yes, because the dataset is already k-anonymous  
+- D. No, both groups have only one distinct value  
+
+
 
 ## There are still issues...
 
@@ -715,125 +749,66 @@ Source: <a href="https://medium.com/data-science/a-differential-privacy-example-
 </span>
 </center>
 
-##
+## Open Science  
+<br></br>  
 
-- Differential privacy is a complex topic and goes beyond the scope of this course  
-- For a clear and accessible explanation, check out this short video:
+:::incremental  
+- **Open science** is about making scientific research, data, and dissemination accessible to all.  
+- It promotes transparency, collaboration, and innovation in research.  
+- Includes open access publications, open data and open tools.
+- Supported by initiatives like **[FOSTER (Facilitate Open Science Training for European Research)](https://openscience.eu/article/project/foster)**.  
+:::  
 
-<center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gI0wk1CXlsQ" title="Differential Privacy — Simply Explained" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
+## What are Open Data?  
+<br></br>  
 
+:::incremental  
+- **Open data** refers to freely accessible, online data that can be used, reused, and shared with proper attribution given to the original source (FOSTER).
+- Sharing and reusing open data helps make research more transparent and reproducible.  
+- Ethical considerations mean that not all data can (or should) be fully open (e.g., personal or sensitive data).  
+:::  
 
-## iClicker Question 1
+## Why Open Data Matters  
+<br></br>  
 
-Given the data, which field(s) could you generalize to help achieve **k = 3 anonymity**?
+:::incremental  
+- Reproducibility: Enables verification and replication of research.  
+- Efficiency: Saves time and resources by reducing redundant data collection.  
+- Collaboration: Allows researchers to combine datasets for new insights.  
+- Innovation: Drives new discoveries and applications across disciplines.  
+:::  
 
-<div style="font-size:0.8em; max-width: 400px; margin: auto;">
+## Data Ownership & Licensing  
+<br></br>  
 
-| Age | ZIP Code | Disease   |
-|-----|----------|-----------|
-| 29  | 13053    | Flu       |
-| 27  | 13068    | Flu       |
-| 28  | 13068    | Cold      |
-| 45  | 14853    | Diabetes  |
-| 46  | 14853    | Diabetes  |
-| 47  | 14853    | Cancer    |
+- Understanding data ownership is essential before sharing or licensing data.  
+- Ownership depends on factors like:  
+  - Who collected or created the data.  
+  - Institutional policies and employment contracts.  
+  - Funding agency requirements and agreements.  
+  - The nature of the data - personal data may be subject to privacy laws (refer back to the Amazon example).
 
-</div>
+## Balancing Openness & Ethics  
+<br></br>  
 
-- A. Generalize Age into age ranges (e.g., 20–29, 40–49)  
-- B. Suppress Disease entirely  
-- C. Generalize ZIP Code to first 3 digits (e.g., 130**, 148**)  
-- D. Generalize Age into age ranges (e.g., 20–29, 40–49) and ZIP code to first 3 digits (e.g., 130**, 148**)  
-- E. It's already $k=3$ anonymous
-
-## iClicker Question 2
-
-Which of the following datasets violates $k = 2$ anonymity?
-
-::: columns
-
-:::: column
-
-**Option A**
-
-| Age | Sex | ZIP   |
-|-----|--------|-------|
-| 34  | M      | 02138 |
-| 34  | M      | 02138 |
-| 34  | F      | 02139 |
-
-::::
-
-:::: column
-
-**Option B**
-
-| Age | Sex | ZIP   |
-|-----|--------|-------|
-| 22  | F      | 10011 |
-| 22  | F      | 10011 |
-| 22  | F      | 10011 |
-
-::::
-
-:::: column
-
-**Option C**
-
-| Age Range | Sex | ZIP Prefix |
-|-----------|--------|------------|
-| 30–39     | *      | 021**      |
-| 30–39     | *      | 021**      |
-| 30–39     | *      | 021**      |
-
-::::
-
-:::
-
-- A. Only A  
-- B. Only B  
-- C. Only C  
-- D. A and B  
-
-
-
-## Question 3
-
-Consider this 3-anonymous dataset. Is it also 2-diverse with respect to "Condition"?
-
-<div style="font-size:0.8em; max-width: 400px; margin: auto;">
-
-| Age Range | ZIP Prefix | Condition |
-|-----------|------------|-----------|
-| 20–29     | 130**      | Flu       |
-| 20–29     | 130**      | Flu       |
-| 20–29     | 130**      | Flu       |
-| 30–39     | 148**      | Cold      |
-| 30–39     | 148**      | Cold      |
-| 30–39     | 148**      | Cancer    |
-
-</div>
-
-- A. Yes, both groups have 2 or more different values  
-- B. No, one group violates l-diversity  
-- C. Yes, because the dataset is already k-anonymous  
-- D. No, both groups have only one distinct value  
-
+:::incremental  
+- Open science supports open data whenever ethically appropriate.  
+- Some data must remain restricted due to privacy, security, or legal constraints.  
+- Best practices help balance openness with responsibility.  
+- Open data and open science movements often overlook marginalized individual's rights and interests (e.g., Indigenous data).  
+- The goal: "As open as possible, as closed as necessary."
+:::  
 
 ## Key Takeaways
 
-- Removing direct identifiers alone does not guarantee privacy  
+- Data exists on a spectrum of identifiability 
+- Even seemingly anonymous data can often be re-identified (e.g., mosaic effect)
 - Quasi-identifiers can lead to re-identification if not protected  
-- $k$-anonymity makes each record indistinguishable from at least $k - 1$ others
-- $l$-diversity improves protection by promoting diversity in sensitive attributes 
-- Differential privacy offers mathematical privacy guarantees  
 - Choosing privacy parameters involves balancing risk and data utility 
-
+- Responsible data handling requires both technical skill and ethical awareness
 
 ## 
 
-::: {style="text-align: center; font-size: 120px; margin-top: 30vh;"}
-Thank you! Questions?
+::: {style="text-align: center; margin-top: 5vh;font-size: 10rem; font-weight: 700;"}
+#### Questions?
 :::

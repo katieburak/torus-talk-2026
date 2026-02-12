@@ -18,25 +18,25 @@
     "href": "index.html#attribution",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "Attribution",
-    "text": "Attribution\n\nThis material is adapted from the following sources:\n\nDSCI 200 - Navigating Data: Acquisition, Exploration and Management, UBC ⭐️\nData Privacy Handbook\nDSCI 541: Privacy, Ethics, and Security at UBC\nHarvard University Privacy Tools Project: Differential Privacy\nSTA 199: Introduction to Data Science and Statistical Thinking, Duke University"
+    "text": "Attribution\n\n\nDSCI 200 - Navigating Data: Acquisition, Exploration and Management, UBC ⭐️\nData Privacy Handbook\nDSCI 541: Privacy, Ethics, and Security at UBC\nHarvard University Privacy Tools Project: Differential Privacy\nSTA 199: Introduction to Data Science and Statistical Thinking, Duke University"
   },
   {
     "objectID": "index.html#what-are-you-comfortable-sharing",
     "href": "index.html#what-are-you-comfortable-sharing",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "What Are You Comfortable Sharing?",
-    "text": "What Are You Comfortable Sharing?\n\nConsider different types of data:\n\n\nYour favorite type of music\n\nYour Instagram likes and follows\n\nYour e-mail\n\nYour name and DOB\n\nYour GPS location throughout the day\nYour browsing history\nYour private messages/DMs\n\n\n\n\n\n\nDiscussion:\n\n\nWhich of these data would you feel comfortable sharing with an app?\n\nWhat questions would you want to ask before sharing this data?\n\nWhat if it combined two or three pieces of information?"
-  },
-  {
-    "objectID": "index.html#learning-objectives",
-    "href": "index.html#learning-objectives",
-    "title": "An Introduction to Data Privacy in Practice",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\nBy the end of today’s lesson, you should be able to:\n\n\nUnderstand key terms in data privacy, including PII, pseudonymization, and anonymization\nIdentify direct and indirect identifiers in sample data sets\nExplain why de-identification is challenging and context-dependent\nApply basic de-identification techniques (e.g., suppression, top-coding, permutation) using R\nRecognize the tradeoff between data utility and privacy risk"
+    "text": "What Are You Comfortable Sharing?\n\n\nYour favorite type of music\n\nYour Instagram likes and follows\n\nYour e-mail\n\nYour name and DOB\n\nYour GPS location throughout the day\nYour browsing history\nYour private messages/DMs\n\n\n\n\n\nDiscussion:\n\n\nWhich of these data would you feel comfortable sharing with an app?\n\nWhat questions would you want to ask before sharing this data?\n\nWhat if it combined two or three pieces of information?"
   },
   {
     "objectID": "index.html#section-1",
     "href": "index.html#section-1",
+    "title": "An Introduction to Data Privacy in Practice",
+    "section": "",
+    "text": "Source: CBC News"
+  },
+  {
+    "objectID": "index.html#section-2",
+    "href": "index.html#section-2",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "",
     "text": "Even something as simple as your Facebook “likes” can reveal a lot more than you think…\nResearchers at Cambridge showed that algorithms could predict:\n\nSexual orientation with up to 88% accuracy\nRace with 95% accuracy\nPolitical affiliation with 85% accuracy\n\nAll from analyzing the pages and posts you “liked” (no profile bio or messages needed)!\n\n\nhttps://www.cam.ac.uk/research/news/digital-records-could-expose-intimate-details-and-personality-traits-of-millions"
@@ -88,7 +88,7 @@
     "href": "index.html#pseudonymization-and-anonymization",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "Pseudonymization and Anonymization",
-    "text": "Pseudonymization and Anonymization\n\nPseudonymisation and a nonymisation are techniques to de-identify personal data\nGoal: reduce linkability of data to individuals\nWe will now define each of these terms"
+    "text": "Pseudonymization and Anonymization\n\nPseudonymization and anonymization are techniques to de-identify personal data\nGoal: reduce linkability of data to individuals\nWe will now define each of these terms"
   },
   {
     "objectID": "index.html#pseudonymization",
@@ -102,7 +102,7 @@
     "href": "index.html#anonymization",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "Anonymization",
-    "text": "Anonymization\n\n\nData are anonymized when no individual is identifiable (directly or indirectly)\nThis applies even to the data controller\nFully anonymized data are no longer personal data\nAnonymisation is difficult to achieve in practice"
+    "text": "Anonymization\n\n\nData are anonymized when no individual is identifiable (directly or indirectly)\nThis applies even to the data controller\nFully anonymized data are no longer personal data\nAnonymization is difficult to achieve in practice"
   },
   {
     "objectID": "index.html#identifiability-spectrum",
@@ -119,25 +119,18 @@
     "text": "When Are Data Truly anonymous?\n\nOnly if re-identification would require unreasonable effort (factors include cost, time and available technology)\nData are not anonymous if:\n\n\n\nDirect identifiers are present\nIndividuals can be singled out from a group\nRe-identification possible via linking datasets (mosaic effect)\nInference about identity is possible (e.g., through different variables)\nDe-identification can be reversed"
   },
   {
-    "objectID": "index.html#context-matters",
-    "href": "index.html#context-matters",
-    "title": "An Introduction to Data Privacy in Practice",
-    "section": "Context Matters",
-    "text": "Context Matters\n\nWhether data are anonymous depends on:\n\nThe context of the research\nAvailable external information\nFuture data uses"
-  },
-  {
     "objectID": "index.html#de-identification-techniques",
     "href": "index.html#de-identification-techniques",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "De-identification Techniques",
-    "text": "De-identification Techniques\nTechniques to deidentify your data include:\n\nSuppression\nGeneralization\nReplacement\nTop- and bottom coding\nAdding noise\nPermutation\n\nWe will talk about each of these techniques individually."
+    "text": "De-identification Techniques\nTechniques to deidentify your data include:\n\nSuppression\nGeneralization\nReplacement\nTop- and bottom coding\nAdding noise\nPermutation"
   },
   {
-    "objectID": "index.html#section-2",
-    "href": "index.html#section-2",
+    "objectID": "index.html#section-3",
+    "href": "index.html#section-3",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "",
-    "text": "First, let’s generate some data we can use to help illustrate these concepts.\n\n\n# A tibble: 4 × 3\n  name             age height_cm\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;\n1 Joel Miller       52       182\n2 Ellie Williams    19       160\n3 Tommy Miller      48       185\n4 Abby Anderson     28       173"
+    "text": "First, let’s generate some data we can use to help illustrate these concepts.\n\nlibrary(tidyverse)\n\ndf &lt;- tibble(\n  name = c(\"Joel Miller\", \"Ellie Williams\", \"Tommy Miller\", \"Abby Anderson\"),\n  age = c(52, 19, 48, 28),\n  height_cm = c(182, 160, 185,173) \n)\n\ndf\n\n# A tibble: 4 × 3\n  name             age height_cm\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;\n1 Joel Miller       52       182\n2 Ellie Williams    19       160\n3 Tommy Miller      48       185\n4 Abby Anderson     28       173"
   },
   {
     "objectID": "index.html#suppression",
@@ -151,21 +144,21 @@
     "href": "index.html#suppression-example",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "Suppression Example",
-    "text": "Suppression Example\n\n\n# A tibble: 4 × 2\n    age height_cm\n  &lt;dbl&gt;     &lt;dbl&gt;\n1    52       182\n2    19       160\n3    48       185\n4    28       173"
+    "text": "Suppression Example\n\ndf_suppressed &lt;- df |&gt;\n  select(-name)\n\ndf_suppressed\n\n# A tibble: 4 × 2\n    age height_cm\n  &lt;dbl&gt;     &lt;dbl&gt;\n1    52       182\n2    19       160\n3    48       185\n4    28       173"
   },
   {
     "objectID": "index.html#generalization",
     "href": "index.html#generalization",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "Generalization",
-    "text": "Generalization\n\n\nReduces detail or granularity in the data\nMakes individuals harder to single out\nExamples:\n\nConvert date of birth to age, or group into ranges\nReplace address with town or region\nRecategorise rare labels into “other” or “missing”\nAbstract people or places in qualitative data (e.g., “Bob” to “[colleague]”)"
+    "text": "Generalization\n\n\nReduces detail or granularity in the data\nMakes individuals harder to single out\nExamples:\n\nConvert date of birth to age, or group into ranges\nReplace address with town or region\nRecategorize rare labels into “other” or “missing”\nAbstract people or places in qualitative data (e.g., “Bob” to “[colleague]”)"
   },
   {
-    "objectID": "index.html#generalization-example",
-    "href": "index.html#generalization-example",
+    "objectID": "index.html#section-4",
+    "href": "index.html#section-4",
     "title": "An Introduction to Data Privacy in Practice",
-    "section": "Generalization Example",
-    "text": "Generalization Example\nHere we will show an example of generalization on the age column:\n\n\n# A tibble: 4 × 3\n  name           height_cm age_group\n  &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;    \n1 Joel Miller          182 30+      \n2 Ellie Williams       160 under 30 \n3 Tommy Miller         185 30+      \n4 Abby Anderson        173 under 30"
+    "section": "",
+    "text": "Here we will show an example of generalization on the age column:\n\ndf_generalized &lt;- df |&gt;\n  mutate(age_group = case_when(\n    age &lt; 30 ~ \"under 30\",\n    TRUE     ~ \"30+\"\n  ))|&gt;\n  select(-age)\n\ndf_generalized\n\n# A tibble: 4 × 3\n  name           height_cm age_group\n  &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;    \n1 Joel Miller          182 30+      \n2 Ellie Williams       160 under 30 \n3 Tommy Miller         185 30+      \n4 Abby Anderson        173 under 30"
   },
   {
     "objectID": "index.html#replacement",
@@ -186,21 +179,21 @@
     "href": "index.html#replacement-with-pseudonyms",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "Replacement with Pseudonyms",
-    "text": "Replacement with Pseudonyms\n\n\n# A tibble: 4 × 3\n  pseudonym   age height_cm\n  &lt;chr&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 ID1          52       182\n2 ID2          19       160\n3 ID3          48       185\n4 ID4          28       173"
+    "text": "Replacement with Pseudonyms\n\ndf_pseudonymized &lt;- df |&gt;\n  mutate(pseudonym = paste0(\"ID\", row_number())) |&gt;\n  select(pseudonym, everything(), -name)\n\ndf_pseudonymized\n\n# A tibble: 4 × 3\n  pseudonym   age height_cm\n  &lt;chr&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 ID1          52       182\n2 ID2          19       160\n3 ID3          48       185\n4 ID4          28       173"
   },
   {
     "objectID": "index.html#hashing",
     "href": "index.html#hashing",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "Hashing",
-    "text": "Hashing\n\nHashing converts names into fixed-length, irreversible strings.\nUnlike pseudonyms, hashed values cannot be easily reversed.\nIn R, we can use the digest package (and function) to hash.\n\n\n\n# A tibble: 4 × 3\n# Rowwise: \n  name_hash                          age height_cm\n  &lt;chr&gt;                            &lt;dbl&gt;     &lt;dbl&gt;\n1 4a3e0ee26ab3fb1338e893f4d4e7244b    52       182\n2 201943dd66d423ed3cce2242a75736d4    19       160\n3 81699ec9483bad176eed57ee43ffa010    48       185\n4 046dff9ba9cf33573396f4de8c0c0e0b    28       173"
+    "text": "Hashing\n\nHashing converts names into fixed-length, irreversible strings.\nUnlike pseudonyms, hashed values cannot be easily reversed.\nIn R, we can use the digest package (and function) to hash."
   },
   {
-    "objectID": "index.html#section-3",
-    "href": "index.html#section-3",
+    "objectID": "index.html#section-5",
+    "href": "index.html#section-5",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "",
-    "text": "What happens if we juse apply digest to the name vector without using rowwise?\n\n\ndigest hashed the entire name column as a single object (it’s not vectorized), so mutate recycled the same hash to every row (which is not what we want)."
+    "text": "library(digest) \n\ndf_hashed &lt;- df |&gt;\n  rowwise() |&gt;\n  mutate(name_hash = digest(name)) |&gt;\n  select(name_hash, everything(), -name)\n\ndf_hashed\n\n# A tibble: 4 × 3\n# Rowwise: \n  name_hash                          age height_cm\n  &lt;chr&gt;                            &lt;dbl&gt;     &lt;dbl&gt;\n1 4a3e0ee26ab3fb1338e893f4d4e7244b    52       182\n2 201943dd66d423ed3cce2242a75736d4    19       160\n3 81699ec9483bad176eed57ee43ffa010    48       185\n4 046dff9ba9cf33573396f4de8c0c0e0b    28       173"
   },
   {
     "objectID": "index.html#top--and-bottom-coding",
@@ -214,21 +207,21 @@
     "href": "index.html#top-coding-example",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "Top-coding example",
-    "text": "Top-coding example\n\nConsider 6ft (182.88cm) is considered our maximum height threshold.\n\n\n\n# A tibble: 4 × 3\n  name             age height_cm\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;\n1 Joel Miller       52      182 \n2 Ellie Williams    19      160 \n3 Tommy Miller      48      183.\n4 Abby Anderson     28      173"
+    "text": "Top-coding example\n\nConsider 6ft (182.88cm) is considered our maximum height threshold.\n\n\ndf_top_coded &lt;- df |&gt;\n  mutate(height_cm = if_else(height_cm &gt; 182.88, 182.88, height_cm))\n\ndf_top_coded\n\n# A tibble: 4 × 3\n  name             age height_cm\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;\n1 Joel Miller       52      182 \n2 Ellie Williams    19      160 \n3 Tommy Miller      48      183.\n4 Abby Anderson     28      173"
   },
   {
     "objectID": "index.html#adding-noise",
     "href": "index.html#adding-noise",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "Adding Noise",
-    "text": "Adding Noise\n\nIntroduces randomness to protect sensitive info\nExamples:\n\nAdd a small random amount to numeric values\nBlur images or alter voices\nUse differential privacy algorithms (advanced)"
+    "text": "Adding Noise\n\nIntroduces randomness to protect sensitive info\nExamples:\n\nAdd a small random amount to numeric values\nBlur images or alter voices"
   },
   {
     "objectID": "index.html#adding-noise-to-height",
     "href": "index.html#adding-noise-to-height",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "Adding Noise to Height",
-    "text": "Adding Noise to Height\nThis adds random noise to the height variable from a normal distribution (\\(\\mu=0\\), \\(\\sigma=2\\)), reducing exact re-identification risk.\n\n\n# A tibble: 4 × 3\n  name             age height_cm_noisy\n  &lt;chr&gt;          &lt;dbl&gt;           &lt;dbl&gt;\n1 Joel Miller       52            182.\n2 Ellie Williams    19            160.\n3 Tommy Miller      48            186.\n4 Abby Anderson     28            174."
+    "text": "Adding Noise to Height\n\nset.seed(200) \n\ndf_noisy &lt;- df |&gt;\n  mutate(height_cm_noisy = height_cm + rnorm(n(), mean = 0, sd = 2)) |&gt;\n    select(-height_cm)\n\ndf_noisy\n\n# A tibble: 4 × 3\n  name             age height_cm_noisy\n  &lt;chr&gt;          &lt;dbl&gt;           &lt;dbl&gt;\n1 Joel Miller       52            182.\n2 Ellie Williams    19            160.\n3 Tommy Miller      48            186.\n4 Abby Anderson     28            174."
   },
   {
     "objectID": "index.html#permutation",
@@ -242,7 +235,7 @@
     "href": "index.html#permutation-of-height-values",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "Permutation of Height Values",
-    "text": "Permutation of Height Values\nHere, the height_cm values are shuffled between individuals, preserving the overall distribution but breaking the link between person and value.\n\n\n# A tibble: 4 × 3\n  name             age height_cm_permuted\n  &lt;chr&gt;          &lt;dbl&gt;              &lt;dbl&gt;\n1 Joel Miller       52                160\n2 Ellie Williams    19                173\n3 Tommy Miller      48                182\n4 Abby Anderson     28                185"
+    "text": "Permutation of Height Values\n\nset.seed(200)\n\ndf_permuted &lt;- df |&gt;\n  mutate(height_cm_permuted = sample(height_cm)) |&gt;\n    select(-height_cm)\n\ndf_permuted\n\n# A tibble: 4 × 3\n  name             age height_cm_permuted\n  &lt;chr&gt;          &lt;dbl&gt;              &lt;dbl&gt;\n1 Joel Miller       52                160\n2 Ellie Williams    19                173\n3 Tommy Miller      48                182\n4 Abby Anderson     28                185"
   },
   {
     "objectID": "index.html#privacy-vs.-utility-tradeoff",
@@ -250,13 +243,6 @@
     "title": "An Introduction to Data Privacy in Practice",
     "section": "Privacy vs. Utility Tradeoff",
     "text": "Privacy vs. Utility Tradeoff\n\n\nhttps://www.researchgate.net/figure/Trade-off-between-privacy-level-and-utility-level-of-data_fig1_357987903"
-  },
-  {
-    "objectID": "index.html#key-takeaways",
-    "href": "index.html#key-takeaways",
-    "title": "An Introduction to Data Privacy in Practice",
-    "section": "Key Takeaways",
-    "text": "Key Takeaways\n\nData exists on a spectrum of identifiability\nEven seemingly anonymous data can often be re-identified (e.g., mosaic effect)\nDifferent techniques offer varying levels of protection and utility\nContext, external data and technological capabilities all affect re-identification risk\nResponsible data handling requires both technical skill and ethical awareness"
   },
   {
     "objectID": "index.html#case-study-brogan-inc.-and-nihb-data",
@@ -270,35 +256,28 @@
     "href": "index.html#discussion",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "Discussion",
-    "text": "Discussion\nTake 5 minutes to discuss this case in groups of 2-3. Consider these questions to reflect on:\n\nWas the data truly de-identified?\nShould de-identified data still require community consent before being shared or sold?\nWhat are the limits of simply removing names and IDs from a dataset?\nHow can we measure whether a dataset is truly “safe” to release?"
-  },
-  {
-    "objectID": "index.html#learning-objectives-1",
-    "href": "index.html#learning-objectives-1",
-    "title": "An Introduction to Data Privacy in Practice",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\nBy the end of today’s lesson, you should be able to:\n\nDefine identifiers, quasi-identifiers and sensitive attributes in data sets\n\nExplain the limitations of basic deidentification methods\n\nDescribe the concepts of \\(k\\)-anonymity, \\(l\\)-diversity and \\(t\\)-closeness\n\nApply \\(k\\)-anonymity and \\(l\\)-diversity to de-identify data\nUnderstand the basic idea of differential privacy and its significance"
+    "text": "Discussion\n\nWas the data truly de-identified?\nWhat are the limits of simply removing names and IDs from a dataset?\nHow can we measure whether a dataset is truly “safe” to release?\nShould de-identified data still require community consent before being shared or sold?"
   },
   {
     "objectID": "index.html#why-basic-deidentification-isnt-always-enough",
     "href": "index.html#why-basic-deidentification-isnt-always-enough",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "Why basic deidentification isn’t always enough",
-    "text": "Why basic deidentification isn’t always enough\n\nLast class, we introduced some techniques for deidentification such as suppression and generalization.\nHowever, individuals can often be re-identified using other information.\nAs datasets become more detailed and linkable, privacy risks increase.\nStatistical methods are needed to ensure meaningful deidentification while preserving data utility."
+    "text": "Why basic deidentification isn’t always enough\n\nIndividuals can often be re-identified using other information.\nAs datasets become more detailed and linkable, privacy risks increase.\nMore advanced statistical methods are often needed to ensure meaningful deidentification while preserving data utility."
   },
   {
     "objectID": "index.html#statistical-approaches-to-deidentification",
     "href": "index.html#statistical-approaches-to-deidentification",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "Statistical approaches to deidentification",
-    "text": "Statistical approaches to deidentification\n\n\n\\(k\\)-anonymity\n\n\\(l\\)-diversity\n\n\\(t\\)-closeness\n\nDifferential privacy (advanced)"
+    "text": "Statistical approaches to deidentification\n\n\n\\(k\\)-anonymity\n\n\\(l\\)-diversity\n\nDifferential privacy (advanced)"
   },
   {
     "objectID": "index.html#overview-of-privacy-models",
     "href": "index.html#overview-of-privacy-models",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "Overview of privacy models",
-    "text": "Overview of privacy models\n\n\\(k\\)-anonymity, \\(l\\)-diversity, and \\(t\\)-closeness are statistical approaches that quantify the level of identifiability within a tabular dataset.\n\nThey focus on how variables combined can lead to identification.\n\nThese approaches are complementary: a dataset can be simultaneously \\(k\\)-anonymous, \\(l\\)-diverse, and \\(t\\)-close, where \\(k\\), \\(l\\), and \\(t\\) represent numeric thresholds.\n\\(k\\)-anonymity, \\(l\\)-diversity, and \\(t\\)-closeness are typically used to de-identify tabular datasets before sharing.\nThey work best on relatively large datasets, where enough observations are present to preserve useful detail while still protecting privacy."
+    "text": "Overview of privacy models\n\n\\(k\\)-anonymity and \\(l\\)-diversity are statistical approaches that quantify the level of identifiability within a tabular dataset.\n\nThey focus on how variables combined can lead to identification.\n\nThese approaches are complementary: a dataset can be simultaneously \\(k\\)-anonymous and \\(l\\)-diverse, where \\(k\\) and \\(l\\) represent numeric thresholds.\n\\(k\\)-anonymity and \\(l\\)-diversityare typically used to de-identify tabular datasets before sharing.\nThey work best on relatively large datasets, where enough observations are present to preserve useful detail while still protecting privacy."
   },
   {
     "objectID": "index.html#identifiers-quasi-identifiers-and-sensitive-attributes",
@@ -350,6 +329,20 @@
     "text": "\\(k=2\\)\n\n\n\n\nAge Range\n\n\nCity\n\n\nSalary Range\n\n\n\n\n\n\n30–39\n\n\nCalgary\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\nToronto\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\nVancouver\n\n\n80,000–89,999\n\n\n\n\n40–49\n\n\nCalgary\n\n\n110,000–119,999\n\n\n\n\n30–39\n\n\nVancouver\n\n\n110,000–119,999\n\n\n\n\n30–39\n\n\nCalgary\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\nToronto\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\nVancouver\n\n\n80,000–89,999\n\n\n\n\n30–39\n\n\nToronto\n\n\n100,000–109,999\n\n\n\n\n40–49\n\n\nCalgary\n\n\n90,000–99,999"
   },
   {
+    "objectID": "index.html#section-6",
+    "href": "index.html#section-6",
+    "title": "An Introduction to Data Privacy in Practice",
+    "section": "",
+    "text": "Given the data, which field(s) could you generalize to help achieve k = 3 anonymity?\n\n\n\n\nAge\nZIP Code\nDisease\n\n\n\n\n29\n13053\nFlu\n\n\n27\n13068\nFlu\n\n\n28\n13068\nCold\n\n\n45\n14853\nDiabetes\n\n\n46\n14853\nDiabetes\n\n\n47\n14853\nCancer\n\n\n\n\n\nA. Generalize Age into age ranges (e.g., 20–29, 40–49)\n\nB. Suppress Disease entirely\n\nC. Generalize ZIP Code to first 3 digits (e.g., 130, 148)\n\nD. Generalize Age into age ranges (e.g., 20–29, 40–49) and ZIP code to first 3 digits (e.g., 130, 148)\n\nE. It’s already \\(k=3\\) anonymous"
+  },
+  {
+    "objectID": "index.html#section-7",
+    "href": "index.html#section-7",
+    "title": "An Introduction to Data Privacy in Practice",
+    "section": "",
+    "text": "Which of the following datasets violates \\(k = 2\\) anonymity?\n\n\nOption A\n\n\n\nAge\nSex\nZIP\n\n\n\n\n34\nM\n02138\n\n\n34\nM\n02138\n\n\n34\nF\n02139\n\n\n\n\nOption B\n\n\n\nAge\nSex\nZIP\n\n\n\n\n22\nF\n10011\n\n\n22\nF\n10011\n\n\n22\nF\n10011\n\n\n\n\nOption C\n\n\n\nAge Range\nSex\nZIP Prefix\n\n\n\n\n30–39\n*\n021**\n\n\n30–39\n*\n021**\n\n\n30–39\n*\n021**\n\n\n\n\n\nA. Only A\n\nB. Only B\n\nC. Only C\n\nD. A and B"
+  },
+  {
     "objectID": "index.html#l-diversity",
     "href": "index.html#l-diversity",
     "title": "An Introduction to Data Privacy in Practice",
@@ -357,8 +350,8 @@
     "text": "\\(l\\)-diversity\n\n\\(l\\)-diversity is an extension of \\(k\\)-anonymity that ensures sufficient variation in a sensitive attribute.\nThis is important because if all individuals within a group share the same sensitive value, there is still a risk of inference."
   },
   {
-    "objectID": "index.html#section-4",
-    "href": "index.html#section-4",
+    "objectID": "index.html#section-8",
+    "href": "index.html#section-8",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "",
     "text": "Although these data are \\(2\\)-anonymous, we can still infer that any 30-39 year old from Calgary who participated earns between 90-99k.\n\n\n\n\n\nAge Range\n\n\nCity\n\n\nSalary Range\n\n\n\n\n\n\n30–39\n\n\nCalgary\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\nToronto\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\nVancouver\n\n\n80,000–89,999\n\n\n\n\n40–49\n\n\nCalgary\n\n\n110,000–119,999\n\n\n\n\n30–39\n\n\nVancouver\n\n\n110,000–119,999\n\n\n\n\n30–39\n\n\nCalgary\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\nToronto\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\nVancouver\n\n\n80,000–89,999\n\n\n\n\n30–39\n\n\nToronto\n\n\n100,000–109,999\n\n\n\n\n40–49\n\n\nCalgary\n\n\n90,000–99,999"
@@ -371,18 +364,18 @@
     "text": "\\(l\\)-diversity\n\nThe approach requires at least \\(l\\) different values for the sensitive attribute within each combination of quasi-identifiers.\nAgain, there is no perfect value for \\(l\\) (typically \\(1&lt; l \\leq k\\))."
   },
   {
-    "objectID": "index.html#section-5",
-    "href": "index.html#section-5",
+    "objectID": "index.html#section-9",
+    "href": "index.html#section-9",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "",
     "text": "With \\(l=2\\), that means that for each combination of Age Range and City, there are at least 2 distinct Salary Ranges.\n\n\n\n\n\nAge Range\n\n\nCity\n\n\nSalary Range\n\n\n\n\n\n\n30–39\n\n\n-\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\n-\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\n-\n\n\n80,000–89,999\n\n\n\n\n40–49\n\n\nCalgary\n\n\n110,000–119,999\n\n\n\n\n30–39\n\n\n-\n\n\n110,000–119,999\n\n\n\n\n30–39\n\n\n-\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\n-\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\n-\n\n\n80,000–89,999\n\n\n\n\n30–39\n\n\n-\n\n\n100,000–109,999\n\n\n\n\n40–49\n\n\nCalgary\n\n\n90,000–99,999"
   },
   {
-    "objectID": "index.html#t-closeness",
-    "href": "index.html#t-closeness",
+    "objectID": "index.html#section-10",
+    "href": "index.html#section-10",
     "title": "An Introduction to Data Privacy in Practice",
-    "section": "\\(t\\)-closeness",
-    "text": "\\(t\\)-closeness\n\n\n\\(t\\)-closeness builds on k-anonymity and l-diversity by requiring that the distribution of the sensitive attribute within each group of quasi-identifiers is close to the distribution in the full dataset.\nThis prevents situations where a sensitive value is overly dominant in a group, which could allow re-identification through skewed distributions.\nFor example, in a dataset with Age and Sex as quasi-identifiers and Income as the sensitive attribute, applying t-closeness with \\(t = 0.1\\) means the income distribution in each group must stay within 10% of the overall income distribution.\nIn this course, we will focus mainly on \\(k\\)-anonymity and \\(l\\)-diversity as \\(t\\)-closeness can get complicated to implement."
+    "section": "",
+    "text": "Consider this 3-anonymous dataset. Is it also 2-diverse with respect to “Condition”?\n\n\n\n\nAge Range\nZIP Prefix\nCondition\n\n\n\n\n20–29\n130**\nFlu\n\n\n20–29\n130**\nFlu\n\n\n20–29\n130**\nFlu\n\n\n30–39\n148**\nCold\n\n\n30–39\n148**\nCold\n\n\n30–39\n148**\nCancer\n\n\n\n\n\nA. Yes, both groups have 2 or more different values\n\nB. No, one group violates l-diversity\n\nC. Yes, because the dataset is already k-anonymous\n\nD. No, both groups have only one distinct value"
   },
   {
     "objectID": "index.html#there-are-still-issues",
@@ -399,52 +392,59 @@
     "text": "Differential privacy\n\nSo, we may need more sophisticated tools to privatize our data…\nDifferential privacy is a mathematical approach to protecting privacy\nIt ensures algorithm results are nearly the same whether one person’s data is included or not\nDifferential privacy makes it hard to tell if any individual’s data is in the dataset, which protects individual’s information (even with unusual or unique data)"
   },
   {
-    "objectID": "index.html#section-6",
-    "href": "index.html#section-6",
+    "objectID": "index.html#section-11",
+    "href": "index.html#section-11",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "",
     "text": "Source: https://medium.com/data-science/a-differential-privacy-example-for-beginners-ef3c23f69401"
   },
   {
-    "objectID": "index.html#section-7",
-    "href": "index.html#section-7",
+    "objectID": "index.html#open-science",
+    "href": "index.html#open-science",
     "title": "An Introduction to Data Privacy in Practice",
-    "section": "",
-    "text": "Differential privacy is a complex topic and goes beyond the scope of this course\n\nFor a clear and accessible explanation, check out this short video:"
+    "section": "Open Science",
+    "text": "Open Science\n\n\n\nOpen science is about making scientific research, data, and dissemination accessible to all.\n\nIt promotes transparency, collaboration, and innovation in research.\n\nIncludes open access publications, open data and open tools.\nSupported by initiatives like FOSTER (Facilitate Open Science Training for European Research)."
   },
   {
-    "objectID": "index.html#iclicker-question-1",
-    "href": "index.html#iclicker-question-1",
+    "objectID": "index.html#what-are-open-data",
+    "href": "index.html#what-are-open-data",
     "title": "An Introduction to Data Privacy in Practice",
-    "section": "iClicker Question 1",
-    "text": "iClicker Question 1\nGiven the data, which field(s) could you generalize to help achieve k = 3 anonymity?\n\n\n\n\nAge\nZIP Code\nDisease\n\n\n\n\n29\n13053\nFlu\n\n\n27\n13068\nFlu\n\n\n28\n13068\nCold\n\n\n45\n14853\nDiabetes\n\n\n46\n14853\nDiabetes\n\n\n47\n14853\nCancer\n\n\n\n\n\nA. Generalize Age into age ranges (e.g., 20–29, 40–49)\n\nB. Suppress Disease entirely\n\nC. Generalize ZIP Code to first 3 digits (e.g., 130, 148)\n\nD. Generalize Age into age ranges (e.g., 20–29, 40–49) and ZIP code to first 3 digits (e.g., 130, 148)\n\nE. It’s already \\(k=3\\) anonymous"
+    "section": "What are Open Data?",
+    "text": "What are Open Data?\n\n\n\nOpen data refers to freely accessible, online data that can be used, reused, and shared with proper attribution given to the original source (FOSTER).\nSharing and reusing open data helps make research more transparent and reproducible.\n\nEthical considerations mean that not all data can (or should) be fully open (e.g., personal or sensitive data)."
   },
   {
-    "objectID": "index.html#iclicker-question-2",
-    "href": "index.html#iclicker-question-2",
+    "objectID": "index.html#why-open-data-matters",
+    "href": "index.html#why-open-data-matters",
     "title": "An Introduction to Data Privacy in Practice",
-    "section": "iClicker Question 2",
-    "text": "iClicker Question 2\nWhich of the following datasets violates \\(k = 2\\) anonymity?\n\n\nOption A\n\n\n\nAge\nSex\nZIP\n\n\n\n\n34\nM\n02138\n\n\n34\nM\n02138\n\n\n34\nF\n02139\n\n\n\n\nOption B\n\n\n\nAge\nSex\nZIP\n\n\n\n\n22\nF\n10011\n\n\n22\nF\n10011\n\n\n22\nF\n10011\n\n\n\n\nOption C\n\n\n\nAge Range\nSex\nZIP Prefix\n\n\n\n\n30–39\n*\n021**\n\n\n30–39\n*\n021**\n\n\n30–39\n*\n021**\n\n\n\n\n\nA. Only A\n\nB. Only B\n\nC. Only C\n\nD. A and B"
+    "section": "Why Open Data Matters",
+    "text": "Why Open Data Matters\n\n\n\nReproducibility: Enables verification and replication of research.\n\nEfficiency: Saves time and resources by reducing redundant data collection.\n\nCollaboration: Allows researchers to combine datasets for new insights.\n\nInnovation: Drives new discoveries and applications across disciplines."
   },
   {
-    "objectID": "index.html#question-3",
-    "href": "index.html#question-3",
+    "objectID": "index.html#data-ownership-licensing",
+    "href": "index.html#data-ownership-licensing",
     "title": "An Introduction to Data Privacy in Practice",
-    "section": "Question 3",
-    "text": "Question 3\nConsider this 3-anonymous dataset. Is it also 2-diverse with respect to “Condition”?\n\n\n\n\nAge Range\nZIP Prefix\nCondition\n\n\n\n\n20–29\n130**\nFlu\n\n\n20–29\n130**\nFlu\n\n\n20–29\n130**\nFlu\n\n\n30–39\n148**\nCold\n\n\n30–39\n148**\nCold\n\n\n30–39\n148**\nCancer\n\n\n\n\n\nA. Yes, both groups have 2 or more different values\n\nB. No, one group violates l-diversity\n\nC. Yes, because the dataset is already k-anonymous\n\nD. No, both groups have only one distinct value"
+    "section": "Data Ownership & Licensing",
+    "text": "Data Ownership & Licensing\n\n\nUnderstanding data ownership is essential before sharing or licensing data.\n\nOwnership depends on factors like:\n\nWho collected or created the data.\n\nInstitutional policies and employment contracts.\n\nFunding agency requirements and agreements.\n\nThe nature of the data - personal data may be subject to privacy laws (refer back to the Amazon example)."
   },
   {
-    "objectID": "index.html#key-takeaways-1",
-    "href": "index.html#key-takeaways-1",
+    "objectID": "index.html#balancing-openness-ethics",
+    "href": "index.html#balancing-openness-ethics",
+    "title": "An Introduction to Data Privacy in Practice",
+    "section": "Balancing Openness & Ethics",
+    "text": "Balancing Openness & Ethics\n\n\n\nOpen science supports open data whenever ethically appropriate.\n\nSome data must remain restricted due to privacy, security, or legal constraints.\n\nBest practices help balance openness with responsibility.\n\nOpen data and open science movements often overlook marginalized individual’s rights and interests (e.g., Indigenous data).\n\nThe goal: “As open as possible, as closed as necessary.”"
+  },
+  {
+    "objectID": "index.html#key-takeaways",
+    "href": "index.html#key-takeaways",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "Key Takeaways",
-    "text": "Key Takeaways\n\nRemoving direct identifiers alone does not guarantee privacy\n\nQuasi-identifiers can lead to re-identification if not protected\n\n\\(k\\)-anonymity makes each record indistinguishable from at least \\(k - 1\\) others\n\\(l\\)-diversity improves protection by promoting diversity in sensitive attributes\nDifferential privacy offers mathematical privacy guarantees\n\nChoosing privacy parameters involves balancing risk and data utility"
+    "text": "Key Takeaways\n\nData exists on a spectrum of identifiability\nEven seemingly anonymous data can often be re-identified (e.g., mosaic effect)\nQuasi-identifiers can lead to re-identification if not protected\n\nChoosing privacy parameters involves balancing risk and data utility\nResponsible data handling requires both technical skill and ethical awareness"
   },
   {
-    "objectID": "index.html#section-8",
-    "href": "index.html#section-8",
+    "objectID": "index.html#section-12",
+    "href": "index.html#section-12",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "",
-    "text": "Thank you! Questions?"
+    "text": "Questions?"
   }
 ]

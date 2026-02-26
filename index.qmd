@@ -40,18 +40,6 @@ Assistant Professor of Teaching, Department of Statistics, UBC
 <https://katieburak.github.io/torus-talk-2026/>
 
 
-## Attribution
-<br><br>
-
-- [*DSCI 200 - Navigating Data: Acquisition, Exploration and Management, UBC*](https://ubc-dsci.github.io/dsci-200/) ⭐️
-- [*Data Privacy Handbook*](https://utrechtuniversity.github.io/dataprivacyhandbook/) 
-- [*DSCI 541: Privacy, Ethics, and Security at UBC*](https://ubc-mds.github.io/course-descriptions/DSCI_541_priv-eth-sec/)
-- [*Harvard University Privacy Tools Project: Differential Privacy*](https://privacytools.seas.harvard.edu/differential-privacy)
-- [*STA 199: Introduction to Data Science and Statistical Thinking, Duke University*](https://sta199-s24.github.io/) 
-
-<br><br>
-
-
 ## What Are You Comfortable Sharing?
 
 ::: column
@@ -67,21 +55,10 @@ Assistant Professor of Teaching, Department of Statistics, UBC
 
 ::: column
 :::incremental
-- Discussion: 
-1. Which of these data would you feel comfortable sharing with an app?  
-2. What questions would you want to ask before sharing this data?  
-3. What if it combined two or three pieces of information? 
+- Which of these data would you feel comfortable sharing with an app?  
+- What if it combined two or three pieces of information? 
 :::
 :::
-
-## 
-
-
-![](img/amazon.png)
-
-<div style="font-size: 0.6em; text-align: center; color: gray;">
-Source: <a href="https://www.cbc.ca/news/business/amazon-fine-alexa-ring-1.6862761" target="_blank">CBC News</a>
-</div>
 
 ## 
 
@@ -110,14 +87,17 @@ Every time you use an app, visit a website, click on a link, fill out a survey o
 
 ## Why Does This Matter?
 
-:::incremental
+
 - You may be targeted with ads, content and potentially misinformation  
 - You could be judged or profiled based on your data (even if it’s not accurate) 
-- You rarely know who has your data (or what they’re doing with it) 
-<br></br>
-<br></br>
-- So what does this mean for us? Let’s explore how data can be used, what makes certain information sensitive and why it matters.
-:::
+- You don't always know who has your data (or what they’re doing with it) 
+
+![](img/amazon.png){width=600px style="display:block; margin-left:auto; margin-right:auto;" }
+
+<div style="font-size: 0.6em; text-align: center; color: gray;">
+Source: <a href="https://www.cbc.ca/news/business/amazon-fine-alexa-ring-1.6862761" target="_blank">CBC News</a>
+</div>
+
 
 ## Personally Identifiable Information (PII)
 
@@ -157,9 +137,9 @@ Separately, a publicly available dataset includes information from a local runni
 
 - In 2000, 87% of the United States population was found to be identifiable using a combination of their ZIP code, gender and date of birth.
 
-![](https://images.unsplash.com/photo-1622227920933-7fcd7377703f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+![](https://images.unsplash.com/photo-1622227920933-7fcd7377703f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D){width=600px style="display:block; margin-left:auto; margin-right:auto;" }
 
-> [https://dataprivacylab.org/projects/identifiability/paper1.pdf](https://dataprivacylab.org/projects/identifiability/paper1.pdf)
+> *[https://dataprivacylab.org/projects/identifiability/paper1.pdf](https://dataprivacylab.org/projects/identifiability/paper1.pdf)*
 
 ## Pseudonymization and Anonymization
 
@@ -197,12 +177,12 @@ Separately, a publicly available dataset includes information from a local runni
 
 ![](https://www.kdnuggets.com/wp-content/uploads/spectrum_data_privacy_KD.png)
 
-> [https://www.kdnuggets.com/2020/08/anonymous-anonymized-data.html](https://www.kdnuggets.com/2020/08/anonymous-anonymized-data.html)
+> *[https://www.kdnuggets.com/2020/08/anonymous-anonymized-data.html](https://www.kdnuggets.com/2020/08/anonymous-anonymized-data.html)*
 
 ## When Are Data Truly anonymous?
 
 - Only if re-identification would require *unreasonable effort* (factors include cost, time and available technology)
-- Data are not anonymous if:
+- Data are *not* anonymous if:
 
 ::: incremental
 - Direct identifiers are present
@@ -227,15 +207,15 @@ Techniques to deidentify your data include:
 
 ## 
 
-First, let's generate some data we can use to help illustrate these concepts. 
+First, let's generate some (synthetic) data we can use to help illustrate these concepts. 
 
 ```{r echo=TRUE}
 library(tidyverse)
 
 df <- tibble(
-  name = c("Joel Miller", "Ellie Williams", "Tommy Miller", "Abby Anderson"),
-  age = c(52, 19, 48, 28),
-  height_cm = c(182, 160, 185,173) 
+  name = c("Ada Lovelace", "Sophie Germain", "Carl Gauss", "Leonhard Euler"),
+  age = c(36, 55, 61, 76),          
+  height_cm = c(160, 173, 182, 185)  
 )
 
 df
@@ -281,8 +261,8 @@ Here we will show an example of generalization on the `age` column:
 ```{r echo=TRUE}
 df_generalized <- df |>
   mutate(age_group = case_when(
-    age < 30 ~ "under 30",
-    TRUE     ~ "30+"
+    age < 60 ~ "under 60",
+    TRUE     ~ "60+"
   ))|>
   select(-age)
 
@@ -352,7 +332,7 @@ df_hashed
 
 ## Top-coding example
 
-- Consider 6ft (182.88cm) is considered our maximum height threshold.
+- Suppose 6ft (182.88cm) is considered our maximum height threshold:
 
 ```{r echo=TRUE}
 df_top_coded <- df |>
@@ -410,12 +390,12 @@ df_permuted
 
 ![](img/privacy-utility.png)
 
->[https://www.researchgate.net/figure/Trade-off-between-privacy-level-and-utility-level-of-data_fig1_357987903](https://www.researchgate.net/figure/Trade-off-between-privacy-level-and-utility-level-of-data_fig1_357987903)
+> *[https://www.researchgate.net/figure/Trade-off-between-privacy-level-and-utility-level-of-data_fig1_357987903](https://www.researchgate.net/figure/Trade-off-between-privacy-level-and-utility-level-of-data_fig1_357987903)*
 
-## Case Study: Brogan Inc. and NIHB Data
+## Brogan Inc. and NIHB Data
 
 - The Non-Insured Health Benefits (NIHB) database contains sensitive health data on First Nations use of services like prescriptions, dental care, and medical devices.
-- In 2001, Health Canada began releasing de-identified NIHB pharmacy claims data to Brogan Inc., a private health consulting firm.
+- In 2001, Health Canada began releasing de-identified NIHB pharmacy claims data to Brogan Inc. (a private health consulting firm).
 - Though personal identifiers were removed, community identifiers remained, and First Nations were not informed until 2007.
 - Brogan sold the data to pharmaceutical companies for commercial research and marketing
 - Health Canada justified the release by claiming no privacy interests remained since personally identifying information had been removed.
@@ -424,7 +404,6 @@ df_permuted
 
 ## Discussion
 
-- Was the data truly de-identified? 
 - What are the limits of simply removing names and IDs from a dataset?
 - How can we measure whether a dataset is truly “safe” to release?
 - Should de-identified data still require community consent before being shared or sold?
@@ -435,6 +414,8 @@ df_permuted
 - Individuals can often be re-identified using other information.
 
 - As datasets become more detailed and linkable, privacy risks increase.
+
+- De-identification may protect individuals but not groups and even “anonymous” data can reveal sensitive patterns about communities.
 
 - More advanced statistical methods are often needed to ensure meaningful deidentification while preserving data utility.
 
@@ -449,8 +430,6 @@ df_permuted
 
 - $k$-anonymity and $l$-diversity are **statistical approaches** that quantify the level of identifiability within a tabular dataset.  
 - They focus on how variables combined can lead to identification.  
-- These approaches are complementary: a dataset can be simultaneously $k$-anonymous and $l$-diverse, where $k$ and $l$ represent numeric thresholds.
--  $k$-anonymity and $l$-diversityare typically used to de-identify tabular datasets *before* sharing.
 - They work best on relatively large datasets, where enough observations are present to preserve useful detail while still protecting privacy.
 
 
@@ -458,6 +437,7 @@ df_permuted
 
 Privacy models distinguish between three types of variables:
 
+:::incremental
 - **Identifiers:** Direct identifiers such as names, student numbers, email addresses.  
 
 - **Quasi-Identifiers:**  Indirect identifiers that can lead to identification when combined with other quasi-identifiers or external data.  
@@ -465,15 +445,10 @@ Privacy models distinguish between three types of variables:
 
 - **Sensitive Attributes:** Variables of interest that need protection and cannot be altered as they are key outcomes.  
 	- Examples: Medical condition, Income, etc.
-
-
-## Importance of Correct Variable Categorization
-
-:::incremental
-- Correctly categorizing variables into identifiers, quasi-identifiers, and sensitive attributes is crucial.  
-- This categorization determines how to de-identify your dataset effectively using $k$-anonymity, $l$-diversity, and $t$-closeness.
-- Now, let's discuss each of these techniques in detail...
+	
+- Correctly categorizing variables into identifiers, quasi-identifiers, and sensitive attributes is crucial in determining how to de-identify your dataset effectively.
 :::
+
 
 ## $k$-anonymity
 
@@ -559,7 +534,7 @@ Given the data, which field(s) could you generalize to help achieve **k = 3 anon
 
 <div style="font-size:0.8em; max-width: 400px; margin: auto;">
 
-| Age | ZIP Code | Disease   |
+| Age | ZIP Code | Condition   |
 |-----|----------|-----------|
 | 29  | 13053    | Flu       |
 | 27  | 13068    | Flu       |
@@ -571,66 +546,22 @@ Given the data, which field(s) could you generalize to help achieve **k = 3 anon
 </div>
 
 - A. Generalize Age into age ranges (e.g., 20–29, 40–49)  
-- B. Suppress Disease entirely  
-- C. Generalize ZIP Code to first 3 digits (e.g., 130**, 148**)  
-- D. Generalize Age into age ranges (e.g., 20–29, 40–49) and ZIP code to first 3 digits (e.g., 130**, 148**)  
+- B. Suppress Condition entirely  
+- C. Generalize ZIP Code to first 3 digits (e.g., 130, 148)  
+- D. Generalize Age into age ranges (e.g., 20–29, 40–49) and ZIP code to first 3 digits (e.g., 130, 148)  
 - E. It's already $k=3$ anonymous
-
-## 
-
-Which of the following datasets violates $k = 2$ anonymity?
-
-::: columns
-
-:::: column
-
-**Option A**
-
-| Age | Sex | ZIP   |
-|-----|--------|-------|
-| 34  | M      | 02138 |
-| 34  | M      | 02138 |
-| 34  | F      | 02139 |
-
-::::
-
-:::: column
-
-**Option B**
-
-| Age | Sex | ZIP   |
-|-----|--------|-------|
-| 22  | F      | 10011 |
-| 22  | F      | 10011 |
-| 22  | F      | 10011 |
-
-::::
-
-:::: column
-
-**Option C**
-
-| Age Range | Sex | ZIP Prefix |
-|-----------|--------|------------|
-| 30–39     | *      | 021**      |
-| 30–39     | *      | 021**      |
-| 30–39     | *      | 021**      |
-
-::::
-
-:::
-
-- A. Only A  
-- B. Only B  
-- C. Only C  
-- D. A and B  
-
 
 ## $l$-diversity
 
-- $l$-diversity is an extension of $k$-anonymity that ensures sufficient variation in a *sensitive attribute*. 
-- This is important because if all individuals within a group share the same sensitive value, there is still a risk of inference.
+- But what if all individuals within a group share the same sensitive value? 
 
+| Age Range | ZIP | Condition |
+| --------- | --- | ------- |
+| 20–29     | 130 | Flu     |
+| 20–29     | 130 | Flu     |
+| 20–29     | 130 | Flu     |
+
+- $l$-diversity is an extension of $k$-anonymity that ensures sufficient variation in a *sensitive attribute*. 
 
 ## 
 
@@ -686,30 +617,6 @@ Which of the following datasets violates $k = 2$ anonymity?
 </table>
 
 
-##
-
-Consider this 3-anonymous dataset. Is it also 2-diverse with respect to "Condition"?
-
-<div style="font-size:0.8em; max-width: 400px; margin: auto;">
-
-| Age Range | ZIP Prefix | Condition |
-|-----------|------------|-----------|
-| 20–29     | 130**      | Flu       |
-| 20–29     | 130**      | Flu       |
-| 20–29     | 130**      | Flu       |
-| 30–39     | 148**      | Cold      |
-| 30–39     | 148**      | Cold      |
-| 30–39     | 148**      | Cancer    |
-
-</div>
-
-- A. Yes, both groups have 2 or more different values  
-- B. No, one group violates l-diversity  
-- C. Yes, because the dataset is already k-anonymous  
-- D. No, both groups have only one distinct value  
-
-
-
 ## There are still issues...
 
 - Even though the data is de-identified, some sensitive patterns can still leak through.
@@ -756,20 +663,18 @@ Source: <a href="https://medium.com/data-science/a-differential-privacy-example-
 - **Open science** is about making scientific research, data, and dissemination accessible to all.  
 - It promotes transparency, collaboration, and innovation in research.  
 - Includes open access publications, open data and open tools.
-- Supported by initiatives like **[FOSTER (Facilitate Open Science Training for European Research)](https://openscience.eu/article/project/foster)**.  
 :::  
 
 ## What are Open Data?  
 <br></br>  
 
 :::incremental  
-- **Open data** refers to freely accessible, online data that can be used, reused, and shared with proper attribution given to the original source (FOSTER).
+- **Open data** refers to freely accessible, online data that can be used, reused, and shared with proper attribution given to the original source **[(FOSTER))](https://openscience.eu/article/project/foster)**. .
 - Sharing and reusing open data helps make research more transparent and reproducible.  
 - Ethical considerations mean that not all data can (or should) be fully open (e.g., personal or sensitive data).  
 :::  
 
 ## Why Open Data Matters  
-<br></br>  
 
 :::incremental  
 - Reproducibility: Enables verification and replication of research.  
@@ -779,7 +684,6 @@ Source: <a href="https://medium.com/data-science/a-differential-privacy-example-
 :::  
 
 ## Data Ownership & Licensing  
-<br></br>  
 
 - Understanding data ownership is essential before sharing or licensing data.  
 - Ownership depends on factors like:  
@@ -787,6 +691,10 @@ Source: <a href="https://medium.com/data-science/a-differential-privacy-example-
   - Institutional policies and employment contracts.  
   - Funding agency requirements and agreements.  
   - The nature of the data - personal data may be subject to privacy laws (refer back to the Amazon example).
+  
+## 
+
+![](img/github.png){width=600px style="display:block; margin-left:auto; margin-right:auto;" }
 
 ## Balancing Openness & Ethics  
 <br></br>  
@@ -806,6 +714,18 @@ Source: <a href="https://medium.com/data-science/a-differential-privacy-example-
 - Quasi-identifiers can lead to re-identification if not protected  
 - Choosing privacy parameters involves balancing risk and data utility 
 - Responsible data handling requires both technical skill and ethical awareness
+
+
+## Attribution
+<br><br>
+
+- [*DSCI 200 - Navigating Data: Acquisition, Exploration and Management, UBC*](https://ubc-dsci.github.io/dsci-200/) ⭐️
+- [*Data Privacy Handbook*](https://utrechtuniversity.github.io/dataprivacyhandbook/) 
+- [*DSCI 541: Privacy, Ethics, and Security at UBC*](https://ubc-mds.github.io/course-descriptions/DSCI_541_priv-eth-sec/)
+- [*Harvard University Privacy Tools Project: Differential Privacy*](https://privacytools.seas.harvard.edu/differential-privacy)
+- [*STA 199: Introduction to Data Science and Statistical Thinking, Duke University*](https://sta199-s24.github.io/) 
+
+<br><br>
 
 ## 
 

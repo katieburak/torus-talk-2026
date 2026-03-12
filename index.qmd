@@ -9,29 +9,29 @@ editor: visual
 theme: [solarized, themer.scss]
 author:
   - name: Katie Burak
- 
 ---
 
 ## About Me
 
-:::::: {style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;"}
-
+::::: {style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;"}
 ::: {style="display: flex; gap: 3rem; justify-content: center;"}
+```{=html}
 <img src="img/headshot.png"
      alt="Katie Burak"
      style="width: 320px; aspect-ratio: 1 / 1; object-fit: cover;" />
+```
 
+```{=html}
 <img src="img/basketball.png"
      style="width: 320px; aspect-ratio: 1 / 1; object-fit: cover;" />
+```
 :::
 
-<div style="text-align: center; font-size: 1.2em;">
-**Katie Burak**  
-Assistant Professor of Teaching, Department of Statistics, UBC
-[https://katieburak.github.io/](https://katieburak.github.io/)
-</div>
-
-::::::
+::: {style="text-align: center; font-size: 1.2em;"}
+**Katie Burak**\
+Assistant Professor of Teaching, Department of Statistics, UBC <https://katieburak.github.io/>
+:::
+:::::
 
 ## 
 
@@ -39,175 +39,158 @@ Assistant Professor of Teaching, Department of Statistics, UBC
 
 <https://katieburak.github.io/torus-talk-2026/>
 
-
 ## What Are You Comfortable Sharing?
 
 ::: column
-
-- Your favorite type of music  
-- Your Instagram likes and follows  
-- Your e-mail  
-- Your name and DOB  
-- Your GPS location throughout the day 
-- Your browsing history
-- Your private messages/DMs  
+-   Your favourite type of music\
+-   Your Instagram likes and follows\
+-   Your e-mail\
+-   Your name and DOB\
+-   Your GPS location throughout the day
+-   Your browsing history
+-   Your private messages/DMs\
 :::
 
-::: column
-:::incremental
-- Which of these data would you feel comfortable sharing with an app?  
-- What if it combined two or three pieces of information? 
+:::: column
+::: incremental
+-   Which of these data would you feel comfortable sharing with an app?\
+-   What if it combined two or three pieces of information?
 :::
-:::
+::::
 
 ## 
 
-- Even something as simple as your Facebook "likes" can reveal a lot more than you think...
-- Researchers at Cambridge showed that algorithms could predict:
-	- Sexual orientation with up to 88% accuracy
-	- Race with 95% accuracy
-	- Political affiliation with 85% accuracy
-- All from analyzing the pages and posts you "liked" (no profile bio or messages needed)!
+-   Even something as simple as your Facebook "likes" can reveal a lot more than you think...
+-   Researchers at Cambridge showed that algorithms could predict:
+    -   Sexual orientation with up to 88% accuracy
+    -   Race with 95% accuracy
+    -   Political affiliation with 85% accuracy
+-   All from analyzing the pages and posts you "liked" (no profile bio or messages needed)!
 
-> [https://www.cam.ac.uk/research/news/digital-records-could-expose-intimate-details-and-personality-traits-of-millions](https://www.cam.ac.uk/research/news/digital-records-could-expose-intimate-details-and-personality-traits-of-millions)
+> *<https://www.cam.ac.uk/research/news/digital-records-could-expose-intimate-details-and-personality-traits-of-millions>*
 
 ## What Happens to Your Data?
 
 Every time you use an app, visit a website, click on a link, fill out a survey or even just scroll on your device, your data is being:
 
-:::incremental
-- Collected - What you click, search, watch, like or buy  
-- Analyzed - Used to predict your behaviour, interests or identity  
-- Shared or Sold - Passed to advertisers, data brokers or other companies  
+::: incremental
+-   Collected - What you click, search, watch, like or buy\
+-   Analyzed - Used to predict your behaviour, interests or identity\
+-   Shared or Sold - Passed to advertisers, data brokers or other companies\
 :::
 
 ![](https://images.unsplash.com/photo-1579869847557-1f67382cc158?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c29jaWFsJTIwbWVkaWF8ZW58MHx8MHx8fDI%3D)
 
----
+------------------------------------------------------------------------
 
 ## Why Does This Matter?
 
+-   You may be targeted with ads, content and potentially misinformation\
+-   You could be judged or profiled based on your data (even if it’s not accurate)
+-   You don't always know who has your data (or what they’re doing with it)
 
-- You may be targeted with ads, content and potentially misinformation  
-- You could be judged or profiled based on your data (even if it’s not accurate) 
-- You don't always know who has your data (or what they’re doing with it) 
+![](img/amazon.png){width="600px" style="display:block; margin-left:auto; margin-right:auto;"}
 
-![](img/amazon.png){width=600px style="display:block; margin-left:auto; margin-right:auto;" }
-
-<div style="font-size: 0.6em; text-align: center; color: gray;">
+::: {style="font-size: 0.6em; text-align: center; color: gray;"}
 Source: <a href="https://www.cbc.ca/news/business/amazon-fine-alexa-ring-1.6862761" target="_blank">CBC News</a>
-</div>
-
+:::
 
 ## Personally Identifiable Information (PII)
 
-- PII refers to any data that can be used to identify a specific individual.
-- Direct identifiers: These clearly and uniquely point to a person.
-	- Examples: name, social security number, patient ID
-- Indirect identifiers: These don’t identify someone on their own, but could when combined.
-	- Examples: age, DOB, postal code, race, sex
+-   PII refers to any data that can be used to identify a specific individual.
+-   Direct identifiers: These clearly and uniquely point to a person.
+    -   Examples: name, social security number, patient ID
+-   Indirect identifiers: These don’t identify someone on their own, but could when combined.
+    -   Examples: age, DOB, postal code, race, sex
 
 ## Personal Data
 
 Data can be identifiable when:
 
-:::incremental
-- They contain directly identifying information.
-- It's possible to single out an individual
-- It's possible to infer information about an individual based on information in your dataset
-- It's possible to link records relating to an individual.
-- De-identification is still reversible.
+::: incremental
+-   They contain directly identifying information
+-   It's possible to single out an individual
+-   It's possible to infer information about an individual based on information in your dataset
+-   It's possible to link records relating to an individual
+-   De-identification is still reversible
 :::
 
 ## Scenario: Can This Data Identify You?
 
 A fitness app shares anonymized data with researchers. The dataset includes:
 
-- Step count per day
-- General location (postal code)
-- Age 
-- Time of day the user exercises
-- Health conditions
+-   Step count per day
+-   General location (postal code)
+-   Age
+-   Time of day the user exercises
+-   Health conditions
 
 Separately, a publicly available dataset includes information from a local running club: names, age groups and 5K race times.
 
 ## The Mosaic Effect
 
-- The "Mosaic Effect" can happens when separate pieces of data, which alone don’t identify anyone, are combined from different sources to reveal personal information or identify an individual.
+-   The "Mosaic Effect" can happens when separate pieces of data, which alone don’t identify anyone, are combined from different sources to reveal personal information or identify an individual.
 
-- In 2000, 87% of the United States population was found to be identifiable using a combination of their ZIP code, gender and date of birth.
+-   In 2000, 87% of the United States population was found to be identifiable using a combination of their ZIP code, gender and date of birth.
 
-![](https://images.unsplash.com/photo-1622227920933-7fcd7377703f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D){width=600px style="display:block; margin-left:auto; margin-right:auto;" }
+![](https://images.unsplash.com/photo-1622227920933-7fcd7377703f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D){width="600px" style="display:block; margin-left:auto; margin-right:auto;"}
 
-> *[https://dataprivacylab.org/projects/identifiability/paper1.pdf](https://dataprivacylab.org/projects/identifiability/paper1.pdf)*
+> [*https://dataprivacylab.org/projects/identifiability/paper1.pdf*](https://dataprivacylab.org/projects/identifiability/paper1.pdf)
 
 ## Pseudonymization and Anonymization
 
-- Pseudonymization and anonymization are techniques to de-identify personal data
-- Goal: reduce linkability of data to individuals
-- We will now define each of these terms 
-
+-   Pseudonymization and anonymization are techniques to de-identify personal data
+-   Goal: reduce linkability of data to individuals
+-   We will now define each of these terms
 
 ## Pseudonymization
 
 ::: incremental
-- Reduces linkability of data to individuals 
-- Data cannot identify individuals *without additional information* 
-- Often done by replacing direct identifiers with pseudonyms
-- Link between real identifiers and pseudonyms is stored separately
-- Re-identification remains possible!
+-   Reduces linkability of data to individuals
+-   Data cannot identify individuals *without additional information*
+-   Often done by replacing direct identifiers with pseudonyms
+-   Link between real identifiers and pseudonyms is stored separately
+-   Re-identification remains possible!
 :::
-
 
 ## Anonymization
 
 ::: incremental
-- Data are anonymized when no individual is identifiable (directly or indirectly)
-- This applies even to the data controller
-- Fully anonymized data are no longer personal data
-- Anonymization is difficult to achieve in practice
+-   Data are anonymized when no individual is identifiable (directly or indirectly)
+-   This applies even to the data controller
+-   Fully anonymized data are no longer personal data
+-   Anonymization is difficult to achieve in practice
 :::
 
 ## Identifiability Spectrum
 
-- Identifiability is a spectrum 
-- More de-identified data = closer to anonymized
-- Lower identifiability = lower re-identification risk
-
+-   Identifiability is a spectrum
+-   More de-identified data = closer to anonymized
+-   Lower identifiability = lower re-identification risk
 
 ![](https://www.kdnuggets.com/wp-content/uploads/spectrum_data_privacy_KD.png)
 
-> *[https://www.kdnuggets.com/2020/08/anonymous-anonymized-data.html](https://www.kdnuggets.com/2020/08/anonymous-anonymized-data.html)*
+> [*https://www.kdnuggets.com/2020/08/anonymous-anonymized-data.html*](https://www.kdnuggets.com/2020/08/anonymous-anonymized-data.html)
 
 ## When Are Data Truly anonymous?
 
-- Only if re-identification would require *unreasonable effort* (factors include cost, time and available technology)
-- Data are *not* anonymous if:
+-   Only if re-identification would require *unreasonable effort* (factors include cost, time and available technology)
+-   Data are *not* anonymous if:
 
 ::: incremental
-- Direct identifiers are present
-- Individuals can be singled out from a group
-- Re-identification possible via linking datasets (mosaic effect)
-- Inference about identity is possible (e.g., through different variables)
-- De-identification can be reversed
+-   Direct identifiers are present
+-   Individuals can be singled out from a group
+-   Re-identification is possible via linking datasets (mosaic effect)
+-   Inference about identity is possible (e.g., through different variables)
+-   De-identification can be reversed
 :::
 
-
-## De-identification Techniques
-
-Techniques to deidentify your data include:
-
-- Suppression
-- Generalization
-- Replacement
-- Top- and bottom coding
-- Adding noise
-- Permutation
+# De-identification Techniques
 
 
 ## 
 
-First, let's generate some (synthetic) data we can use to help illustrate these concepts. 
+First, let's generate some (synthetic) data we can use to help illustrate these concepts.
 
 ```{r echo=TRUE}
 library(tidyverse)
@@ -224,12 +207,12 @@ df
 ## Suppression
 
 ::: incremental
-- Remove entire variables, values or records
-- Used to eliminate highly identifying or unnecessary data
-- Examples:
-  - Names, contact details, social security numbers
-  - GPS metadata, IP addresses, neuroimaging facial features
-  - Outliers or unique participants
+-   Remove entire variables, values or records
+-   Used to eliminate highly identifying or unnecessary data
+-   Examples:
+    -   Names, contact details, social security numbers
+    -   GPS metadata, IP addresses, neuroimaging facial features
+    -   Outliers or unique participants
 :::
 
 ## Suppression Example
@@ -241,22 +224,21 @@ df_suppressed <- df |>
 df_suppressed
 ```
 
-
 ## Generalization
 
 ::: incremental
-- Reduces detail or granularity in the data
-- Makes individuals harder to single out
-- Examples:
-  - Convert date of birth to age, or group into ranges
-  - Replace address with town or region
-  - Recategorize rare labels into “other” or “missing”
-  - Abstract people or places in qualitative data (e.g., “Bob” to “[colleague]”)
+-   Reduces detail or granularity in the data
+-   Makes individuals harder to single out
+-   Examples:
+    -   Convert date of birth to age, or group into ranges
+    -   Replace address with town or region
+    -   Recategorize rare labels into “other” or “missing”
+    -   Abstract people or places in qualitative data (e.g., “Bob” to “\[colleague\]”)
 :::
 
 ## 
 
-Here we will show an example of generalization on the `age` column: 
+Here we will show an example of generalization on the `age` column:
 
 ```{r echo=TRUE}
 df_generalized <- df |>
@@ -269,25 +251,24 @@ df_generalized <- df |>
 df_generalized
 ```
 
-
 ## Replacement
 
 ::: incremental
-- Swap identifying info with less informative alternatives
-- Examples:
-  - Use pseudonyms for names (with securely stored keyfile)
-  - Replace with placeholders (e.g., “[redacted]”)
-  - Rounding numeric values
+-   Swap identifying info with less informative alternatives
+-   Examples:
+    -   Use pseudonyms for names (with securely stored keyfile)
+    -   Replace with placeholders (e.g., “\[redacted\]”)
+    -   Rounding numeric values
 :::
 
 ## Creating Pseudonyms
 
 ::: incremental
-- Pseudonyms should reveal nothing about the subject
-- Good pseudonyms:
-  - Are random or meaningless strings/numbers
-  - Are securely managed (e.g., encrypted keyfile)
-- Can be generated using tools in Excel, R, Python, SPSS
+-   Pseudonyms should reveal nothing about the subject
+-   Good pseudonyms:
+    -   Are random or meaningless strings/numbers
+    -   Are securely managed (e.g., encrypted keyfile)
+-   Can be generated using tools in Excel, R, Python, SPSS
 :::
 
 ## Replacement with Pseudonyms
@@ -300,12 +281,11 @@ df_pseudonymized <- df |>
 df_pseudonymized
 ```
 
-## Hashing 
+## Hashing
 
-- Hashing converts names into fixed-length, irreversible strings.
-- Unlike pseudonyms, hashed values cannot be easily reversed.
-- In R, we can use the `digest` package (and function) to hash. 
-
+-   Hashing converts names into fixed-length, irreversible strings.
+-   Unlike pseudonyms, hashed values cannot be easily reversed.
+-   In R, we can use the `digest` package (and function) to hash.
 
 ## 
 
@@ -320,19 +300,18 @@ df_hashed <- df |>
 df_hashed
 ```
 
-
 ## Top- and Bottom-Coding
 
 ::: incremental
-- Limits extreme values in quantitative data
-- Recode all values above or below a threshold
-- Example: all incomes above \$150,000 become \$150,000
-- Preserves much of the dataset, but distorts distribution tails
+-   Limits extreme values in quantitative data
+-   Recode all values above or below a threshold
+-   Example: all incomes above \$150,000 become \$150,000
+-   Preserves much of the dataset, but distorts distribution tails
 :::
 
 ## Top-coding example
 
-- Suppose 6ft (182.88cm) is considered our maximum height threshold:
+-   Suppose 6ft (182.88cm) is considered our maximum height threshold:
 
 ```{r echo=TRUE}
 df_top_coded <- df |>
@@ -341,13 +320,12 @@ df_top_coded <- df |>
 df_top_coded
 ```
 
-
 ## Adding Noise
 
-- Introduces randomness to protect sensitive info
-- Examples:
-  - Add a small random amount to numeric values
-  - Blur images or alter voices
+-   Introduces randomness to protect sensitive info
+-   Examples:
+    -   Add a small random amount to numeric values
+    -   Blur images or alter voices
 
 ## Adding Noise to Height
 
@@ -361,15 +339,13 @@ df_noisy <- df |>
 df_noisy
 ```
 
-
-
 ## Permutation
 
 ::: incremental
-- Swap values between individuals
-- Makes linking variables across a record more difficult
-- Maintains distributions, but breaks correlations
-- Can limit the types of analyses possible
+-   Swap values between individuals
+-   Makes linking variables across a record more difficult
+-   Maintains distributions, but breaks correlations
+-   Can limit the types of analyses possible
 :::
 
 ## Permutation of Height Values
@@ -384,157 +360,162 @@ df_permuted <- df |>
 df_permuted
 ```
 
-
-
 ## Privacy vs. Utility Tradeoff
 
 ![](img/privacy-utility.png)
 
-> *[https://www.researchgate.net/figure/Trade-off-between-privacy-level-and-utility-level-of-data_fig1_357987903](https://www.researchgate.net/figure/Trade-off-between-privacy-level-and-utility-level-of-data_fig1_357987903)*
+> [*https://www.researchgate.net/figure/Trade-off-between-privacy-level-and-utility-level-of-data_fig1_357987903*](https://www.researchgate.net/figure/Trade-off-between-privacy-level-and-utility-level-of-data_fig1_357987903)
 
 ## Brogan Inc. and NIHB Data
 
-- The Non-Insured Health Benefits (NIHB) database contains sensitive health data on First Nations use of services like prescriptions, dental care, and medical devices.
-- In 2001, Health Canada began releasing de-identified NIHB pharmacy claims data to Brogan Inc. (a private health consulting firm).
-- Though personal identifiers were removed, community identifiers remained, and First Nations were not informed until 2007.
-- Brogan sold the data to pharmaceutical companies for commercial research and marketing
-- Health Canada justified the release by claiming no privacy interests remained since personally identifying information had been removed.
+-   The Non-Insured Health Benefits (NIHB) database contains sensitive health data on First Nations use of services like prescriptions, dental care, and medical devices.
+-   In 2001, Health Canada began releasing de-identified NIHB pharmacy claims data to Brogan Inc. (a private health consulting firm).
+-   Though personal identifiers were removed, community identifiers remained, and First Nations were not informed until 2007.
+-   Brogan sold the data to pharmaceutical companies for commercial research and marketing
+-   Health Canada justified the release by claiming no privacy interests remained since personally identifying information had been removed.
 
 > Kukutai, T., & Taylor, J. (2016). Indigenous data sovereignty: Toward an agenda. ANU press.
 
 ## Discussion
 
-- What are the limits of simply removing names and IDs from a dataset?
-- How can we measure whether a dataset is truly “safe” to release?
-- Should de-identified data still require community consent before being shared or sold?
-
+-   What are the limits of simply removing names and IDs from a dataset?
+-   How can we measure whether a dataset is truly “safe” to release?
+-   Should de-identified data still require community consent before being shared or sold?
 
 ## Why basic deidentification isn't always enough
 
-- Individuals can often be re-identified using other information.
+-   Individuals can often be re-identified using other information.
 
-- As datasets become more detailed and linkable, privacy risks increase.
+-   As datasets become more detailed and linkable, privacy risks increase.
 
-- De-identification may protect individuals but not groups and even “anonymous” data can reveal sensitive patterns about communities.
+-   De-identification may protect individuals but not groups and even “anonymous” data can reveal sensitive patterns about communities.
 
-- More advanced statistical methods are often needed to ensure meaningful deidentification while preserving data utility.
+-   More advanced statistical methods are often needed to ensure meaningful deidentification while preserving data utility.
 
-## Statistical approaches to deidentification 
+## Statistical approaches to deidentification
+
 <br></br>
 
-- $k$-anonymity  
-- $l$-diversity  
-- Differential privacy (advanced)
+-   $k$-anonymity\
+-   $l$-diversity\
+-   Differential privacy (advanced)
 
 ## Overview of privacy models
 
-- $k$-anonymity and $l$-diversity are **statistical approaches** that quantify the level of identifiability within a tabular dataset.  
-- They focus on how variables combined can lead to identification.  
-- They work best on relatively large datasets, where enough observations are present to preserve useful detail while still protecting privacy.
-
+-   $k$-anonymity and $l$-diversity are **statistical approaches** that quantify the level of identifiability within a tabular dataset.\
+-   They focus on how variables combined can lead to identification.\
+-   They work best on relatively large datasets, where enough observations are present to preserve useful detail while still protecting privacy.
 
 ## Identifiers, Quasi-Identifiers, and Sensitive Attributes
 
 Privacy models distinguish between three types of variables:
 
-:::incremental
-- **Identifiers:** Direct identifiers such as names, student numbers, email addresses.  
+::: incremental
+-   **Identifiers:** Direct identifiers such as names, student numbers, email addresses.
 
-- **Quasi-Identifiers:**  Indirect identifiers that can lead to identification when combined with other quasi-identifiers or external data.  
-	- Examples: age, sex, place of residence, physical characteristics, timestamps, etc.
+-   **Quasi-Identifiers:** Indirect identifiers that can lead to identification when combined with other quasi-identifiers or external data.
 
-- **Sensitive Attributes:** Variables of interest that need protection and cannot be altered as they are key outcomes.  
-	- Examples: Medical condition, Income, etc.
-	
-- Correctly categorizing variables into identifiers, quasi-identifiers, and sensitive attributes is crucial in determining how to de-identify your dataset effectively.
+    -   Examples: age, sex, place of residence, physical characteristics, timestamps, etc.
+
+-   **Sensitive Attributes:** Variables of interest that need protection and cannot be altered as they are key outcomes.
+
+    -   Examples: Medical condition, Income, etc.
+
+-   Correctly categorizing variables into identifiers, quasi-identifiers, and sensitive attributes is crucial in determining how to de-identify your dataset effectively.
 :::
-
 
 ## $k$-anonymity
 
-:::incremental
-- A data set is $k$-anonymous if each observation cannot be distinguished from at least $k-1$ other observations based on the quasi-identifiers.  
-- This can be achieved through generalization, suppression and sometimes top- or bottom-coding of data values.
-- Applying $k$-anonymity makes it more difficult for an attacker to single out or re-identify specific individuals.  
-- It also helps reduce the risk of the mosaic effect, where combining data points could lead to identification.
+::: incremental
+-   A data set is $k$-anonymous if each observation cannot be distinguished from at least $k-1$ other observations based on the quasi-identifiers.\
+-   This can be achieved through generalization, suppression and sometimes top- or bottom-coding of data values.
+-   Applying $k$-anonymity makes it more difficult for an attacker to single out or re-identify specific individuals.\
+-   It also helps reduce the risk of the mosaic effect, where combining data points could lead to identification.
 :::
 
 ## Making a data set $k$-anonymous
 
-:::incremental
-1. Identify variables as identifiers, quasi-identifiers and sensitive attributes.  
-2. Choose a value for $k$.  
-3. Aggregate or transform the data so each combination of quasi-identifiers occurs at least k times.  
+::: incremental
+1.  Identify variables as identifiers, quasi-identifiers and sensitive attributes.\
+2.  Choose a value for $k$.\
+3.  Aggregate or transform the data so each combination of quasi-identifiers occurs at least k times.\
 :::
 
-## Choosing $k$ 
+## Choosing $k$
 
-- There is no single correct value for $k$! 
-- Higher $k$ increases privacy, but reduces data detail and utility.  
-- The choice depends on promises made to data subjects and acceptable risk levels.
+-   There is no single correct value for $k$!
+-   Higher $k$ increases privacy, but reduces data detail and utility.\
+-   The choice depends on promises made to data subjects and acceptable risk levels.
 
-<div style="text-align: center;">
-  ![](https://www.k2view.com/hubfs/K%20anonymity.png){width=600px}
-  
-  <small>
-    Source: <a href="https://www.k2view.com/blog/what-is-k-anonymity" target="_blank">k2view.com</a>
-  </small>
-</div>
+::: {style="text-align: center;"}
+![](https://www.k2view.com/hubfs/K%20anonymity.png){width="600px"}
+
+<small> Source: <a href="https://www.k2view.com/blog/what-is-k-anonymity" target="_blank">k2view.com</a> </small>
+:::
 
 ## Example data
 
-- Age and city are quasi-identifiers, and salary is considered a sensitive attribute.
+-   Age and city are quasi-identifiers, and salary is considered a sensitive attribute.
 
-<table style="width: 80%; border-collapse: collapse; font-size: 90%; line-height: 1;">
-  <thead>
-    <tr>
-      <th style="text-align: left; border-bottom: 1px solid #ccc; padding: 4px 8px;">Age</th>
-      <th style="text-align: left; border-bottom: 1px solid #ccc; padding: 4px 8px;">City</th>
-      <th style="text-align: left; border-bottom: 1px solid #ccc; padding: 4px 8px;">Salary</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td style="padding: 2px 8px;">38</td><td style="padding: 2px 8px;">Calgary</td><td style="padding: 2px 8px;">91,000</td></tr>
-    <tr><td style="padding: 2px 8px;">37</td><td style="padding: 2px 8px;">Toronto</td><td style="padding: 2px 8px;">92,000</td></tr>
-    <tr><td style="padding: 2px 8px;">31</td><td style="padding: 2px 8px;">Vancouver</td><td style="padding: 2px 8px;">82,000</td></tr>
-    <tr><td style="padding: 2px 8px;">48</td><td style="padding: 2px 8px;">Calgary</td><td style="padding: 2px 8px;">115,000</td></tr>
-    <tr><td style="padding: 2px 8px;">39</td><td style="padding: 2px 8px;">Vancouver</td><td style="padding: 2px 8px;">118,000</td></tr>
-    <tr><td style="padding: 2px 8px;">37</td><td style="padding: 2px 8px;">Calgary</td><td style="padding: 2px 8px;">97,000</td></tr>
-    <tr><td style="padding: 2px 8px;">34</td><td style="padding: 2px 8px;">Toronto</td><td style="padding: 2px 8px;">98,000</td></tr>
-    <tr><td style="padding: 2px 8px;">33</td><td style="padding: 2px 8px;">Vancouver</td><td style="padding: 2px 8px;">89,000</td></tr>
-    <tr><td style="padding: 2px 8px;">32</td><td style="padding: 2px 8px;">Toronto</td><td style="padding: 2px 8px;">108,000</td></tr>
-    <tr><td style="padding: 2px 8px;">45</td><td style="padding: 2px 8px;">Calgary</td><td style="padding: 2px 8px;">95,000</td></tr>
-  </tbody>
-</table>
-
++-----+-----------+---------+
+| Age | City      | Salary  |
++:====+:==========+:========+
+| 38  | Calgary   | 91,000  |
++-----+-----------+---------+
+| 37  | Toronto   | 92,000  |
++-----+-----------+---------+
+| 31  | Vancouver | 82,000  |
++-----+-----------+---------+
+| 48  | Calgary   | 115,000 |
++-----+-----------+---------+
+| 39  | Vancouver | 118,000 |
++-----+-----------+---------+
+| 37  | Calgary   | 97,000  |
++-----+-----------+---------+
+| 34  | Toronto   | 98,000  |
++-----+-----------+---------+
+| 33  | Vancouver | 89,000  |
++-----+-----------+---------+
+| 32  | Toronto   | 108,000 |
++-----+-----------+---------+
+| 45  | Calgary   | 95,000  |
++-----+-----------+---------+
 
 ## $k=2$
 
-<table>
-  <thead>
-    <tr><th>Age Range</th><th>City</th><th>Salary Range</th></tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: #FFEECC"><td>30–39</td><td>Calgary</td><td>90,000–99,999</td></tr>
-    <tr style="background-color: #CCEEFF"><td>30–39</td><td>Toronto</td><td>90,000–99,999</td></tr>
-    <tr style="background-color: #EEFFCC"><td>30–39</td><td>Vancouver</td><td>80,000–89,999</td></tr>
-    <tr style="background-color: #FFDDEE"><td>40–49</td><td>Calgary</td><td>110,000–119,999</td></tr>
-    <tr style="background-color: #EEFFCC"><td>30–39</td><td>Vancouver</td><td>110,000–119,999</td></tr>
-    <tr style="background-color: #FFEECC"><td>30–39</td><td>Calgary</td><td>90,000–99,999</td></tr>
-    <tr style="background-color: #CCEEFF"><td>30–39</td><td>Toronto</td><td>90,000–99,999</td></tr>
-    <tr style="background-color: #EEFFCC"><td>30–39</td><td>Vancouver</td><td>80,000–89,999</td></tr>
-    <tr style="background-color: #CCEEFF"><td>30–39</td><td>Toronto</td><td>100,000–109,999</td></tr>
-    <tr style="background-color: #FFDDEE"><td>40–49</td><td>Calgary</td><td>90,000–99,999</td></tr>
-  </tbody>
-</table>
+::: {style="font-size:0.65em"}
++-----------+-----------+-----------------+
+| Age Range | City      | Salary Range    |
++===========+===========+=================+
+| 30–39     | Calgary   | 90,000–99,999   |
++-----------+-----------+-----------------+
+| 30–39     | Toronto   | 90,000–99,999   |
++-----------+-----------+-----------------+
+| 30–39     | Vancouver | 80,000–89,999   |
++-----------+-----------+-----------------+
+| 40–49     | Calgary   | 110,000–119,999 |
++-----------+-----------+-----------------+
+| 30–39     | Vancouver | 110,000–119,999 |
++-----------+-----------+-----------------+
+| 30–39     | Calgary   | 90,000–99,999   |
++-----------+-----------+-----------------+
+| 30–39     | Toronto   | 90,000–99,999   |
++-----------+-----------+-----------------+
+| 30–39     | Vancouver | 80,000–89,999   |
++-----------+-----------+-----------------+
+| 30–39     | Toronto   | 100,000–109,999 |
++-----------+-----------+-----------------+
+| 40–49     | Calgary   | 90,000–99,999   |
++-----------+-----------+-----------------+
+:::
 
-##
 
-Given the data, which field(s) could you generalize to help achieve **k = 3 anonymity**?
+## 
 
-<div style="font-size:0.8em; max-width: 400px; margin: auto;">
+Given the data and treating condition as the sensitive attribute, which field(s) could you generalize to help achieve $k = 3$ anonymity?
 
-| Age | ZIP Code | Condition   |
+::: {style="font-size:0.65em; max-width: 400px; margin: auto;"}
+| Age | ZIP Code | Condition |
 |-----|----------|-----------|
 | 29  | 13053    | Flu       |
 | 27  | 13068    | Flu       |
@@ -542,193 +523,216 @@ Given the data, which field(s) could you generalize to help achieve **k = 3 anon
 | 45  | 14853    | Diabetes  |
 | 46  | 14853    | Diabetes  |
 | 47  | 14853    | Cancer    |
+:::
 
-</div>
+-   A. Generalize Age into age ranges (e.g., 20–29, 40–49)\
+-   B. Suppress Condition entirely\
+-   C. Generalize ZIP Code to first 3 digits (e.g., 130, 148)\
+-   D. Generalize Age into age ranges (e.g., 20–29, 40–49) and ZIP code to first 3 digits (e.g., 130, 148)\
+-   E. It's already $k=3$ anonymous
 
-- A. Generalize Age into age ranges (e.g., 20–29, 40–49)  
-- B. Suppress Condition entirely  
-- C. Generalize ZIP Code to first 3 digits (e.g., 130, 148)  
-- D. Generalize Age into age ranges (e.g., 20–29, 40–49) and ZIP code to first 3 digits (e.g., 130, 148)  
-- E. It's already $k=3$ anonymous
+##
+
+::: {style="font-size:0.7em; max-width: 400px; margin: auto;"}
+| Age | ZIP Code | Condition |
+|-----|----------|-----------|
+| 20–29  | 130    | Flu       |
+| 20–29  | 130    | Flu       |
+| 20-29  | 130    | Cold      |
+| 40–49  | 148    | Diabetes  |
+| 40–49 | 148    | Diabetes  |
+| 40–49  | 148    | Cancer    |
+:::
 
 ## $l$-diversity
 
-- But what if all individuals within a group share the same sensitive value? 
+-   But what if all individuals within a group share the same sensitive value?
 
 | Age Range | ZIP | Condition |
-| --------- | --- | ------- |
-| 20–29     | 130 | Flu     |
-| 20–29     | 130 | Flu     |
-| 20–29     | 130 | Flu     |
+|-----------|-----|-----------|
+| 20–29     | 130 | Flu       |
+| 20–29     | 130 | Flu       |
+| 20–29     | 130 | Flu       |
 
-- $l$-diversity is an extension of $k$-anonymity that ensures sufficient variation in a *sensitive attribute*. 
+-   $l$-diversity is an extension of $k$-anonymity that ensures sufficient variation in a *sensitive attribute*.
 
 ## 
 
-- Although these data are $2$-anonymous, we can still infer that any 30-39 year old from Calgary who participated earns between 90-99k. 
+-   Although these data are $2$-anonymous, we can still infer that any 30-39 year old from Calgary who participated earns between 90-99k.
 
-<table style="font-size: 90%; border-collapse: collapse;">
-  <thead>
-    <tr><th style="padding: 4px;">Age Range</th><th style="padding: 4px;">City</th><th style="padding: 4px;">Salary Range</th></tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: #FFEECC"><td style="padding: 4px;">30–39</td><td style="padding: 4px;">Calgary</td><td style="padding: 4px;">90,000–99,999</td></tr>
-    <tr style="background-color: #CCEEFF"><td style="padding: 4px;">30–39</td><td style="padding: 4px;">Toronto</td><td style="padding: 4px;">90,000–99,999</td></tr>
-    <tr style="background-color: #EEFFCC"><td style="padding: 4px;">30–39</td><td style="padding: 4px;">Vancouver</td><td style="padding: 4px;">80,000–89,999</td></tr>
-    <tr style="background-color: #FFDDEE"><td style="padding: 4px;">40–49</td><td style="padding: 4px;">Calgary</td><td style="padding: 4px;">110,000–119,999</td></tr>
-    <tr style="background-color: #EEFFCC"><td style="padding: 4px;">30–39</td><td style="padding: 4px;">Vancouver</td><td style="padding: 4px;">110,000–119,999</td></tr>
-    <tr style="background-color: #FFEECC"><td style="padding: 4px;">30–39</td><td style="padding: 4px;">Calgary</td><td style="padding: 4px;">90,000–99,999</td></tr>
-    <tr style="background-color: #CCEEFF"><td style="padding: 4px;">30–39</td><td style="padding: 4px;">Toronto</td><td style="padding: 4px;">90,000–99,999</td></tr>
-    <tr style="background-color: #EEFFCC"><td style="padding: 4px;">30–39</td><td style="padding: 4px;">Vancouver</td><td style="padding: 4px;">80,000–89,999</td></tr>
-    <tr style="background-color: #CCEEFF"><td style="padding: 4px;">30–39</td><td style="padding: 4px;">Toronto</td><td style="padding: 4px;">100,000–109,999</td></tr>
-    <tr style="background-color: #FFDDEE"><td style="padding: 4px;">40–49</td><td style="padding: 4px;">Calgary</td><td style="padding: 4px;">90,000–99,999</td></tr>
-  </tbody>
-</table>
+::: {style="font-size:0.65em"}
++-----------+-----------+-----------------+
+| Age Range | City      | Salary Range    |
++===========+===========+=================+
+| 30–39     | Calgary   | 90,000–99,999   |
++-----------+-----------+-----------------+
+| 30–39     | Toronto   | 90,000–99,999   |
++-----------+-----------+-----------------+
+| 30–39     | Vancouver | 80,000–89,999   |
++-----------+-----------+-----------------+
+| 40–49     | Calgary   | 110,000–119,999 |
++-----------+-----------+-----------------+
+| 30–39     | Vancouver | 110,000–119,999 |
++-----------+-----------+-----------------+
+| 30–39     | Calgary   | 90,000–99,999   |
++-----------+-----------+-----------------+
+| 30–39     | Toronto   | 90,000–99,999   |
++-----------+-----------+-----------------+
+| 30–39     | Vancouver | 80,000–89,999   |
++-----------+-----------+-----------------+
+| 30–39     | Toronto   | 100,000–109,999 |
++-----------+-----------+-----------------+
+| 40–49     | Calgary   | 90,000–99,999   |
++-----------+-----------+-----------------+
+:::
 
 ## $l$-diversity
 
-- The approach requires at least $l$ different values for the sensitive attribute within each combination of quasi-identifiers.
-- Again, there is no perfect value for $l$ (typically $1< l \leq k$).
+-   The approach requires at least $l$ different values for the sensitive attribute within each combination of quasi-identifiers.
+-   Again, there is no perfect value for $l$ (typically $1< l \leq k$).
 
 ## 
 
-- With $l=2$, that means that for each combination of Age Range and City, there are at least 2 distinct Salary Ranges.
+-   With $l=2$, that means that for each combination of Age Range and City, there are at least 2 distinct Salary Ranges.
 
-<table style="font-size: 90%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="padding: 4px;">Age Range</th>
-      <th style="padding: 4px;">City</th>
-      <th style="padding: 4px;">Salary Range</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: #FFEECC"><td style="padding: 4px;">30–39</td><td style="padding: 4px;">-</td><td style="padding: 4px;">90,000–99,999</td></tr>
-    <tr style="background-color: #CCEEFF"><td style="padding: 4px;">30–39</td><td style="padding: 4px;">-</td><td style="padding: 4px;">90,000–99,999</td></tr>
-    <tr style="background-color: #EEFFCC"><td style="padding: 4px;">30–39</td><td style="padding: 4px;">-</td><td style="padding: 4px;">80,000–89,999</td></tr>
-    <tr style="background-color: #FFDDEE"><td style="padding: 4px;">40–49</td><td style="padding: 4px;">Calgary</td><td style="padding: 4px;">110,000–119,999</td></tr>
-    <tr style="background-color: #EEFFCC"><td style="padding: 4px;">30–39</td><td style="padding: 4px;">-</td><td style="padding: 4px;">110,000–119,999</td></tr>
-    <tr style="background-color: #FFEECC"><td style="padding: 4px;">30–39</td><td style="padding: 4px;">-</td><td style="padding: 4px;">90,000–99,999</td></tr>
-    <tr style="background-color: #CCEEFF"><td style="padding: 4px;">30–39</td><td style="padding: 4px;">-</td><td style="padding: 4px;">90,000–99,999</td></tr>
-    <tr style="background-color: #EEFFCC"><td style="padding: 4px;">30–39</td><td style="padding: 4px;">-</td><td style="padding: 4px;">80,000–89,999</td></tr>
-    <tr style="background-color: #CCEEFF"><td style="padding: 4px;">30–39</td><td style="padding: 4px;">-</td><td style="padding: 4px;">100,000–109,999</td></tr>
-    <tr style="background-color: #FFDDEE"><td style="padding: 4px;">40–49</td><td style="padding: 4px;">Calgary</td><td style="padding: 4px;">90,000–99,999</td></tr>
-  </tbody>
-</table>
-
+::: {style="font-size:0.65em"}
++-----------+---------+-----------------+
+| Age Range | City    | Salary Range    |
++===========+=========+=================+
+| 30–39     | \-      | 90,000–99,999   |
++-----------+---------+-----------------+
+| 30–39     | \-      | 90,000–99,999   |
++-----------+---------+-----------------+
+| 30–39     | \-      | 80,000–89,999   |
++-----------+---------+-----------------+
+| 40–49     | Calgary | 110,000–119,999 |
++-----------+---------+-----------------+
+| 30–39     | \-      | 110,000–119,999 |
++-----------+---------+-----------------+
+| 30–39     | \-      | 90,000–99,999   |
++-----------+---------+-----------------+
+| 30–39     | \-      | 90,000–99,999   |
++-----------+---------+-----------------+
+| 30–39     | \-      | 80,000–89,999   |
++-----------+---------+-----------------+
+| 30–39     | \-      | 100,000–109,999 |
++-----------+---------+-----------------+
+| 40–49     | Calgary | 90,000–99,999   |
++-----------+---------+-----------------+
+:::
 
 ## There are still issues...
 
-- Even though the data is de-identified, some sensitive patterns can still leak through.
+-   Even though the data is de-identified, some sensitive patterns can still leak through.
 
-- In the example we discussed, both individuals are grouped into the same age range and city.
+-   In the example we discussed, both individuals are grouped into the same age range and city.
 
-- While they are in different salary ranges and exact values are hidden, the range is still quite narrow.
+-   While they are in different salary ranges and exact values are hidden, the range is still quite narrow.
 
-- Due to the similarity of the salary ranges, one can still infer that both individuals earn between \$90,000 and \$119,999.
+-   Due to the similarity of the salary ranges, one can still infer that both individuals earn between \$90,000 and \$119,999.
 
-<table>
-  <thead>
-    <tr><th>Age Range</th><th>City</th><th>Salary Range</th></tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: #FFDDEE"><td>40–49</td><td>Calgary</td><td>110,000–119,999</td></tr>
-    <tr style="background-color: #FFDDEE"><td>40–49</td><td>Calgary</td><td>90,000–99,999</td></tr>
-  </tbody>
-</table>
+::: {style="font-size:0.65em"}
++-----------+---------+-----------------+
+| Age Range | City    | Salary Range    |
++===========+=========+=================+
+| 40–49     | Calgary | 110,000–119,999 |
++-----------+---------+-----------------+
+| 40–49     | Calgary | 90,000–99,999   |
++-----------+---------+-----------------+
+:::
+
 
 ## Differential privacy
 
-- So, we may need more sophisticated tools to privatize our data...
-- Differential privacy is a mathematical approach to protecting privacy
-- It ensures algorithm results are nearly the same whether one person’s data is included or not
-- Differential privacy makes it hard to tell if any individual’s data is in the dataset, which protects individual's information (even with unusual or unique data)
+-   So, we may need more sophisticated tools to privatize our data...
+-   Differential privacy is a mathematical approach to protecting privacy
+-   It ensures algorithm results are nearly the same whether one person’s data is included or not
+-   Differential privacy makes it hard to tell if any individual’s data is in the dataset, which protects individual's information (even with unusual or unique data)
 
 ## 
 
 <center>
-<img src="https://miro.medium.com/v2/resize:fit:1400/1*zRpTLYBAfumNAZIM7mZkXw.png" alt="Differential Privacy Example" width="70%">
+
+<img src="https://miro.medium.com/v2/resize:fit:1400/1*zRpTLYBAfumNAZIM7mZkXw.png" alt="Differential Privacy Example" width="70%"/>
 
 <br>
 
-<span style="font-size: 0.8em;">
-Source: <a href="https://medium.com/data-science/a-differential-privacy-example-for-beginners-ef3c23f69401">https://medium.com/data-science/a-differential-privacy-example-for-beginners-ef3c23f69401</a>
-</span>
+[ Source: <a href="https://medium.com/data-science/a-differential-privacy-example-for-beginners-ef3c23f69401">https://medium.com/data-science/a-differential-privacy-example-for-beginners-ef3c23f69401</a> ]{style="font-size: 0.8em;"}
+
 </center>
 
-## Open Science  
-<br></br>  
+## Open Science
 
-:::incremental  
-- **Open science** is about making scientific research, data, and dissemination accessible to all.  
-- It promotes transparency, collaboration, and innovation in research.  
-- Includes open access publications, open data and open tools.
-:::  
+<br></br>
 
-## What are Open Data?  
-<br></br>  
+::: incremental
+-   **Open science** is about making scientific research, data, and dissemination accessible to all.\
+-   It promotes transparency, collaboration, and innovation in research.\
+-   Includes open access publications, open data and open tools.
+:::
 
-:::incremental  
-- **Open data** refers to freely accessible, online data that can be used, reused, and shared with proper attribution given to the original source **[(FOSTER))](https://openscience.eu/article/project/foster)**. .
-- Sharing and reusing open data helps make research more transparent and reproducible.  
-- Ethical considerations mean that not all data can (or should) be fully open (e.g., personal or sensitive data).  
-:::  
+## What are Open Data?
 
-## Why Open Data Matters  
+<br></br>
 
-:::incremental  
-- Reproducibility: Enables verification and replication of research.  
-- Efficiency: Saves time and resources by reducing redundant data collection.  
-- Collaboration: Allows researchers to combine datasets for new insights.  
-- Innovation: Drives new discoveries and applications across disciplines.  
-:::  
+::: incremental
+-   **Open data** refers to freely accessible, online data that can be used, reused, and shared with proper attribution given to the original source [(FOSTER)](https://openscience.eu/article/project/foster). .
+-   Sharing and reusing open data helps make research more transparent and reproducible.\
+-   Ethical considerations mean that not all data can (or should) be fully open (e.g., personal or sensitive data).\
+:::
 
-## Data Ownership & Licensing  
+## Why Open Data Matters
 
-- Understanding data ownership is essential before sharing or licensing data.  
-- Ownership depends on factors like:  
-  - Who collected or created the data.  
-  - Institutional policies and employment contracts.  
-  - Funding agency requirements and agreements.  
-  - The nature of the data - personal data may be subject to privacy laws (refer back to the Amazon example).
-  
+::: incremental
+-   Reproducibility: Enables verification and replication of research.\
+-   Efficiency: Saves time and resources by reducing redundant data collection.\
+-   Collaboration: Allows researchers to combine datasets for new insights.\
+-   Innovation: Drives new discoveries and applications across disciplines.\
+:::
+
+## Data Ownership & Licensing
+
+-   Understanding data ownership is essential before sharing or licensing data.\
+-   Ownership depends on factors like:
+    -   Who collected or created the data.\
+    -   Institutional policies and employment contracts.\
+    -   Funding agency requirements and agreements.\
+    -   The nature of the data - personal data may be subject to privacy laws (refer back to the Amazon example).
+
 ## 
 
-![](img/github.png){width=600px style="display:block; margin-left:auto; margin-right:auto;" }
+![](img/github.png){width="600px" style="display:block; margin-left:auto; margin-right:auto;"}
 
-## Balancing Openness & Ethics  
-<br></br>  
+## Balancing Openness & Ethics
 
-:::incremental  
-- Open science supports open data whenever ethically appropriate.  
-- Some data must remain restricted due to privacy, security, or legal constraints.  
-- Best practices help balance openness with responsibility.  
-- Open data and open science movements often overlook marginalized individual's rights and interests (e.g., Indigenous data).  
-- The goal: "As open as possible, as closed as necessary."
-:::  
+<br></br>
+
+::: incremental
+-   Open science supports open data whenever ethically appropriate.\
+-   Some data must remain restricted due to privacy, security, or legal constraints.\
+-   Best practices help balance openness with responsibility.\
+-   Open data and open science movements often overlook marginalized individual's rights and interests (e.g., Indigenous data).\
+-   The goal: "As open as possible, as closed as necessary."
+:::
 
 ## Key Takeaways
 
-- Data exists on a spectrum of identifiability 
-- Even seemingly anonymous data can often be re-identified (e.g., mosaic effect)
-- Quasi-identifiers can lead to re-identification if not protected  
-- Choosing privacy parameters involves balancing risk and data utility 
-- Responsible data handling requires both technical skill and ethical awareness
-
+-   Data exists on a spectrum of identifiability
+-   Even seemingly anonymous data can often be re-identified (e.g., mosaic effect)
+-   Quasi-identifiers can lead to re-identification if not protected\
+-   Choosing privacy parameters involves balancing risk and data utility
+-   Responsible data handling requires both technical skill and ethical awareness
 
 ## Attribution
-<br><br>
-
-- [*DSCI 200 - Navigating Data: Acquisition, Exploration and Management, UBC*](https://ubc-dsci.github.io/dsci-200/) ⭐️
-- [*Data Privacy Handbook*](https://utrechtuniversity.github.io/dataprivacyhandbook/) 
-- [*DSCI 541: Privacy, Ethics, and Security at UBC*](https://ubc-mds.github.io/course-descriptions/DSCI_541_priv-eth-sec/)
-- [*Harvard University Privacy Tools Project: Differential Privacy*](https://privacytools.seas.harvard.edu/differential-privacy)
-- [*STA 199: Introduction to Data Science and Statistical Thinking, Duke University*](https://sta199-s24.github.io/) 
 
 <br><br>
 
-## 
+-   [*DSCI 200 - Navigating Data: Acquisition, Exploration and Management, UBC*](https://ubc-dsci.github.io/dsci-200/) ⭐️
+-   [*Data Privacy Handbook*](https://utrechtuniversity.github.io/dataprivacyhandbook/)
+-   [*DSCI 541: Privacy, Ethics, and Security at UBC*](https://ubc-mds.github.io/course-descriptions/DSCI_541_priv-eth-sec/)
+-   [*Harvard University Privacy Tools Project: Differential Privacy*](https://privacytools.seas.harvard.edu/differential-privacy)
+-   [*STA 199: Introduction to Data Science and Statistical Thinking, Duke University*](https://sta199-s24.github.io/)
 
-::: {style="text-align: center; margin-top: 5vh;font-size: 10rem; font-weight: 700;"}
-#### Questions?
-:::
+<br><br>
+
+# Thank you! Questions?

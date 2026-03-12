@@ -18,7 +18,7 @@
     "href": "index.html#what-are-you-comfortable-sharing",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "What Are You Comfortable Sharing?",
-    "text": "What Are You Comfortable Sharing?\n\n\nYour favorite type of music\n\nYour Instagram likes and follows\n\nYour e-mail\n\nYour name and DOB\n\nYour GPS location throughout the day\nYour browsing history\nYour private messages/DMs\n\n\n\n\n\nWhich of these data would you feel comfortable sharing with an app?\n\nWhat if it combined two or three pieces of information?"
+    "text": "What Are You Comfortable Sharing?\n\n\nYour favourite type of music\n\nYour Instagram likes and follows\n\nYour e-mail\n\nYour name and DOB\n\nYour GPS location throughout the day\nYour browsing history\nYour private messages/DMs\n\n\n\n\n\nWhich of these data would you feel comfortable sharing with an app?\n\nWhat if it combined two or three pieces of information?"
   },
   {
     "objectID": "index.html#section-1",
@@ -53,7 +53,7 @@
     "href": "index.html#personal-data",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "Personal Data",
-    "text": "Personal Data\nData can be identifiable when:\n\n\nThey contain directly identifying information.\nIt’s possible to single out an individual\nIt’s possible to infer information about an individual based on information in your dataset\nIt’s possible to link records relating to an individual.\nDe-identification is still reversible."
+    "text": "Personal Data\nData can be identifiable when:\n\n\nThey contain directly identifying information\nIt’s possible to single out an individual\nIt’s possible to infer information about an individual based on information in your dataset\nIt’s possible to link records relating to an individual\nDe-identification is still reversible"
   },
   {
     "objectID": "index.html#scenario-can-this-data-identify-you",
@@ -102,14 +102,7 @@
     "href": "index.html#when-are-data-truly-anonymous",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "When Are Data Truly anonymous?",
-    "text": "When Are Data Truly anonymous?\n\nOnly if re-identification would require unreasonable effort (factors include cost, time and available technology)\nData are not anonymous if:\n\n\n\nDirect identifiers are present\nIndividuals can be singled out from a group\nRe-identification possible via linking datasets (mosaic effect)\nInference about identity is possible (e.g., through different variables)\nDe-identification can be reversed"
-  },
-  {
-    "objectID": "index.html#de-identification-techniques",
-    "href": "index.html#de-identification-techniques",
-    "title": "An Introduction to Data Privacy in Practice",
-    "section": "De-identification Techniques",
-    "text": "De-identification Techniques\nTechniques to deidentify your data include:\n\nSuppression\nGeneralization\nReplacement\nTop- and bottom coding\nAdding noise\nPermutation"
+    "text": "When Are Data Truly anonymous?\n\nOnly if re-identification would require unreasonable effort (factors include cost, time and available technology)\nData are not anonymous if:\n\n\n\nDirect identifiers are present\nIndividuals can be singled out from a group\nRe-identification is possible via linking datasets (mosaic effect)\nInference about identity is possible (e.g., through different variables)\nDe-identification can be reversed"
   },
   {
     "objectID": "index.html#section-2",
@@ -298,21 +291,28 @@
     "href": "index.html#example-data",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "Example data",
-    "text": "Example data\n\nAge and city are quasi-identifiers, and salary is considered a sensitive attribute.\n\n\n\n\n\nAge\n\n\nCity\n\n\nSalary\n\n\n\n\n\n\n38\n\n\nCalgary\n\n\n91,000\n\n\n\n\n37\n\n\nToronto\n\n\n92,000\n\n\n\n\n31\n\n\nVancouver\n\n\n82,000\n\n\n\n\n48\n\n\nCalgary\n\n\n115,000\n\n\n\n\n39\n\n\nVancouver\n\n\n118,000\n\n\n\n\n37\n\n\nCalgary\n\n\n97,000\n\n\n\n\n34\n\n\nToronto\n\n\n98,000\n\n\n\n\n33\n\n\nVancouver\n\n\n89,000\n\n\n\n\n32\n\n\nToronto\n\n\n108,000\n\n\n\n\n45\n\n\nCalgary\n\n\n95,000"
+    "text": "Example data\n\nAge and city are quasi-identifiers, and salary is considered a sensitive attribute.\n\n\n\n\n\n\n\n\n\nAge\nCity\nSalary\n\n\n\n\n38\nCalgary\n91,000\n\n\n37\nToronto\n92,000\n\n\n31\nVancouver\n82,000\n\n\n48\nCalgary\n115,000\n\n\n39\nVancouver\n118,000\n\n\n37\nCalgary\n97,000\n\n\n34\nToronto\n98,000\n\n\n33\nVancouver\n89,000\n\n\n32\nToronto\n108,000\n\n\n45\nCalgary\n95,000"
   },
   {
     "objectID": "index.html#k2",
     "href": "index.html#k2",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "\\(k=2\\)",
-    "text": "\\(k=2\\)\n\n\n\n\nAge Range\n\n\nCity\n\n\nSalary Range\n\n\n\n\n\n\n30–39\n\n\nCalgary\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\nToronto\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\nVancouver\n\n\n80,000–89,999\n\n\n\n\n40–49\n\n\nCalgary\n\n\n110,000–119,999\n\n\n\n\n30–39\n\n\nVancouver\n\n\n110,000–119,999\n\n\n\n\n30–39\n\n\nCalgary\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\nToronto\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\nVancouver\n\n\n80,000–89,999\n\n\n\n\n30–39\n\n\nToronto\n\n\n100,000–109,999\n\n\n\n\n40–49\n\n\nCalgary\n\n\n90,000–99,999"
+    "text": "\\(k=2\\)\n\n\n\n\n\n\n\n\n\nAge Range\nCity\nSalary Range\n\n\n\n\n30–39\nCalgary\n90,000–99,999\n\n\n30–39\nToronto\n90,000–99,999\n\n\n30–39\nVancouver\n80,000–89,999\n\n\n40–49\nCalgary\n110,000–119,999\n\n\n30–39\nVancouver\n110,000–119,999\n\n\n30–39\nCalgary\n90,000–99,999\n\n\n30–39\nToronto\n90,000–99,999\n\n\n30–39\nVancouver\n80,000–89,999\n\n\n30–39\nToronto\n100,000–109,999\n\n\n40–49\nCalgary\n90,000–99,999"
   },
   {
     "objectID": "index.html#section-5",
     "href": "index.html#section-5",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "",
-    "text": "Given the data, which field(s) could you generalize to help achieve k = 3 anonymity?\n\n\n\n\nAge\nZIP Code\nCondition\n\n\n\n\n29\n13053\nFlu\n\n\n27\n13068\nFlu\n\n\n28\n13068\nCold\n\n\n45\n14853\nDiabetes\n\n\n46\n14853\nDiabetes\n\n\n47\n14853\nCancer\n\n\n\n\n\nA. Generalize Age into age ranges (e.g., 20–29, 40–49)\n\nB. Suppress Condition entirely\n\nC. Generalize ZIP Code to first 3 digits (e.g., 130, 148)\n\nD. Generalize Age into age ranges (e.g., 20–29, 40–49) and ZIP code to first 3 digits (e.g., 130, 148)\n\nE. It’s already \\(k=3\\) anonymous"
+    "text": "Given the data and treating condition as the sensitive attribute, which field(s) could you generalize to help achieve \\(k = 3\\) anonymity?\n\n\n\n\nAge\nZIP Code\nCondition\n\n\n\n\n29\n13053\nFlu\n\n\n27\n13068\nFlu\n\n\n28\n13068\nCold\n\n\n45\n14853\nDiabetes\n\n\n46\n14853\nDiabetes\n\n\n47\n14853\nCancer\n\n\n\n\n\nA. Generalize Age into age ranges (e.g., 20–29, 40–49)\n\nB. Suppress Condition entirely\n\nC. Generalize ZIP Code to first 3 digits (e.g., 130, 148)\n\nD. Generalize Age into age ranges (e.g., 20–29, 40–49) and ZIP code to first 3 digits (e.g., 130, 148)\n\nE. It’s already \\(k=3\\) anonymous"
+  },
+  {
+    "objectID": "index.html#section-6",
+    "href": "index.html#section-6",
+    "title": "An Introduction to Data Privacy in Practice",
+    "section": "",
+    "text": "Age\nZIP Code\nCondition\n\n\n\n\n20–29\n130\nFlu\n\n\n20–29\n130\nFlu\n\n\n20-29\n130\nCold\n\n\n40–49\n148\nDiabetes\n\n\n40–49\n148\nDiabetes\n\n\n40–49\n148\nCancer"
   },
   {
     "objectID": "index.html#l-diversity",
@@ -322,11 +322,11 @@
     "text": "\\(l\\)-diversity\n\nBut what if all individuals within a group share the same sensitive value?\n\n\n\n\nAge Range\nZIP\nCondition\n\n\n\n\n20–29\n130\nFlu\n\n\n20–29\n130\nFlu\n\n\n20–29\n130\nFlu\n\n\n\n\n\\(l\\)-diversity is an extension of \\(k\\)-anonymity that ensures sufficient variation in a sensitive attribute."
   },
   {
-    "objectID": "index.html#section-6",
-    "href": "index.html#section-6",
+    "objectID": "index.html#section-7",
+    "href": "index.html#section-7",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "",
-    "text": "Although these data are \\(2\\)-anonymous, we can still infer that any 30-39 year old from Calgary who participated earns between 90-99k.\n\n\n\n\n\nAge Range\n\n\nCity\n\n\nSalary Range\n\n\n\n\n\n\n30–39\n\n\nCalgary\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\nToronto\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\nVancouver\n\n\n80,000–89,999\n\n\n\n\n40–49\n\n\nCalgary\n\n\n110,000–119,999\n\n\n\n\n30–39\n\n\nVancouver\n\n\n110,000–119,999\n\n\n\n\n30–39\n\n\nCalgary\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\nToronto\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\nVancouver\n\n\n80,000–89,999\n\n\n\n\n30–39\n\n\nToronto\n\n\n100,000–109,999\n\n\n\n\n40–49\n\n\nCalgary\n\n\n90,000–99,999"
+    "text": "Although these data are \\(2\\)-anonymous, we can still infer that any 30-39 year old from Calgary who participated earns between 90-99k.\n\n\n\n\n\n\n\n\n\n\nAge Range\nCity\nSalary Range\n\n\n\n\n30–39\nCalgary\n90,000–99,999\n\n\n30–39\nToronto\n90,000–99,999\n\n\n30–39\nVancouver\n80,000–89,999\n\n\n40–49\nCalgary\n110,000–119,999\n\n\n30–39\nVancouver\n110,000–119,999\n\n\n30–39\nCalgary\n90,000–99,999\n\n\n30–39\nToronto\n90,000–99,999\n\n\n30–39\nVancouver\n80,000–89,999\n\n\n30–39\nToronto\n100,000–109,999\n\n\n40–49\nCalgary\n90,000–99,999"
   },
   {
     "objectID": "index.html#l-diversity-1",
@@ -336,18 +336,18 @@
     "text": "\\(l\\)-diversity\n\nThe approach requires at least \\(l\\) different values for the sensitive attribute within each combination of quasi-identifiers.\nAgain, there is no perfect value for \\(l\\) (typically \\(1&lt; l \\leq k\\))."
   },
   {
-    "objectID": "index.html#section-7",
-    "href": "index.html#section-7",
+    "objectID": "index.html#section-8",
+    "href": "index.html#section-8",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "",
-    "text": "With \\(l=2\\), that means that for each combination of Age Range and City, there are at least 2 distinct Salary Ranges.\n\n\n\n\n\nAge Range\n\n\nCity\n\n\nSalary Range\n\n\n\n\n\n\n30–39\n\n\n-\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\n-\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\n-\n\n\n80,000–89,999\n\n\n\n\n40–49\n\n\nCalgary\n\n\n110,000–119,999\n\n\n\n\n30–39\n\n\n-\n\n\n110,000–119,999\n\n\n\n\n30–39\n\n\n-\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\n-\n\n\n90,000–99,999\n\n\n\n\n30–39\n\n\n-\n\n\n80,000–89,999\n\n\n\n\n30–39\n\n\n-\n\n\n100,000–109,999\n\n\n\n\n40–49\n\n\nCalgary\n\n\n90,000–99,999"
+    "text": "With \\(l=2\\), that means that for each combination of Age Range and City, there are at least 2 distinct Salary Ranges.\n\n\n\n\n\n\n\n\n\n\nAge Range\nCity\nSalary Range\n\n\n\n\n30–39\n-\n90,000–99,999\n\n\n30–39\n-\n90,000–99,999\n\n\n30–39\n-\n80,000–89,999\n\n\n40–49\nCalgary\n110,000–119,999\n\n\n30–39\n-\n110,000–119,999\n\n\n30–39\n-\n90,000–99,999\n\n\n30–39\n-\n90,000–99,999\n\n\n30–39\n-\n80,000–89,999\n\n\n30–39\n-\n100,000–109,999\n\n\n40–49\nCalgary\n90,000–99,999"
   },
   {
     "objectID": "index.html#there-are-still-issues",
     "href": "index.html#there-are-still-issues",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "There are still issues…",
-    "text": "There are still issues…\n\nEven though the data is de-identified, some sensitive patterns can still leak through.\nIn the example we discussed, both individuals are grouped into the same age range and city.\nWhile they are in different salary ranges and exact values are hidden, the range is still quite narrow.\nDue to the similarity of the salary ranges, one can still infer that both individuals earn between $90,000 and $119,999.\n\n\n\n\n\nAge Range\n\n\nCity\n\n\nSalary Range\n\n\n\n\n\n\n40–49\n\n\nCalgary\n\n\n110,000–119,999\n\n\n\n\n40–49\n\n\nCalgary\n\n\n90,000–99,999"
+    "text": "There are still issues…\n\nEven though the data is de-identified, some sensitive patterns can still leak through.\nIn the example we discussed, both individuals are grouped into the same age range and city.\nWhile they are in different salary ranges and exact values are hidden, the range is still quite narrow.\nDue to the similarity of the salary ranges, one can still infer that both individuals earn between $90,000 and $119,999.\n\n\n\n\n\n\n\n\n\n\nAge Range\nCity\nSalary Range\n\n\n\n\n40–49\nCalgary\n110,000–119,999\n\n\n40–49\nCalgary\n90,000–99,999"
   },
   {
     "objectID": "index.html#differential-privacy",
@@ -357,8 +357,8 @@
     "text": "Differential privacy\n\nSo, we may need more sophisticated tools to privatize our data…\nDifferential privacy is a mathematical approach to protecting privacy\nIt ensures algorithm results are nearly the same whether one person’s data is included or not\nDifferential privacy makes it hard to tell if any individual’s data is in the dataset, which protects individual’s information (even with unusual or unique data)"
   },
   {
-    "objectID": "index.html#section-8",
-    "href": "index.html#section-8",
+    "objectID": "index.html#section-9",
+    "href": "index.html#section-9",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "",
     "text": "Source: https://medium.com/data-science/a-differential-privacy-example-for-beginners-ef3c23f69401"
@@ -375,7 +375,7 @@
     "href": "index.html#what-are-open-data",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "What are Open Data?",
-    "text": "What are Open Data?\n\n\n\nOpen data refers to freely accessible, online data that can be used, reused, and shared with proper attribution given to the original source (FOSTER)). .\nSharing and reusing open data helps make research more transparent and reproducible.\n\nEthical considerations mean that not all data can (or should) be fully open (e.g., personal or sensitive data)."
+    "text": "What are Open Data?\n\n\n\nOpen data refers to freely accessible, online data that can be used, reused, and shared with proper attribution given to the original source (FOSTER). .\nSharing and reusing open data helps make research more transparent and reproducible.\n\nEthical considerations mean that not all data can (or should) be fully open (e.g., personal or sensitive data)."
   },
   {
     "objectID": "index.html#why-open-data-matters",
@@ -413,8 +413,8 @@
     "text": "Attribution\n\n\nDSCI 200 - Navigating Data: Acquisition, Exploration and Management, UBC ⭐️\nData Privacy Handbook\nDSCI 541: Privacy, Ethics, and Security at UBC\nHarvard University Privacy Tools Project: Differential Privacy\nSTA 199: Introduction to Data Science and Statistical Thinking, Duke University"
   },
   {
-    "objectID": "index.html#section-10",
-    "href": "index.html#section-10",
+    "objectID": "index.html#section-11",
+    "href": "index.html#section-11",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "",
     "text": "Questions?"

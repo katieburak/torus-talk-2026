@@ -67,16 +67,16 @@ Assistant Professor of Teaching, Department of Statistics, UBC <https://katiebur
     -   Political affiliation with 85% accuracy
 -   All from analyzing the pages and posts you "liked" (no profile bio or messages needed)!
 
-> *<https://www.cam.ac.uk/research/news/digital-records-could-expose-intimate-details-and-personality-traits-of-millions>*
+> [*https://www.cam.ac.uk/research/news/digital-records-could-expose-intimate-details-and-personality-traits-of-millions*](https://www.cam.ac.uk/research/news/digital-records-could-expose-intimate-details-and-personality-traits-of-millions){.uri}
 
 ## What Happens to Your Data?
 
 Every time you use an app, visit a website, click on a link, fill out a survey or even just scroll on your device, your data is being:
 
 ::: incremental
--   Collected - What you click, search, watch, like or buy\
--   Analyzed - Used to predict your behaviour, interests or identity\
--   Shared or Sold - Passed to advertisers, data brokers or other companies\
+-   Collected 
+-   Analyzed 
+-   Shared or Sold
 :::
 
 ![](https://images.unsplash.com/photo-1579869847557-1f67382cc158?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c29jaWFsJTIwbWVkaWF8ZW58MHx8MHx8fDI%3D)
@@ -85,8 +85,8 @@ Every time you use an app, visit a website, click on a link, fill out a survey o
 
 ## Why Does This Matter?
 
--   You may be targeted with ads, content and potentially misinformation\
--   You could be judged or profiled based on your data (even if it’s not accurate)
+-   You may be targeted with ads, content and potentially misinformation
+-   You could be judged or profiled based on your data
 -   You don't always know who has your data (or what they’re doing with it)
 
 ![](img/amazon.png){width="600px" style="display:block; margin-left:auto; margin-right:auto;"}
@@ -172,21 +172,8 @@ Separately, a publicly available dataset includes information from a local runni
 
 > [*https://www.kdnuggets.com/2020/08/anonymous-anonymized-data.html*](https://www.kdnuggets.com/2020/08/anonymous-anonymized-data.html)
 
-## When Are Data Truly anonymous?
-
--   Only if re-identification would require *unreasonable effort* (factors include cost, time and available technology)
--   Data are *not* anonymous if:
-
-::: incremental
--   Direct identifiers are present
--   Individuals can be singled out from a group
--   Re-identification is possible via linking datasets (mosaic effect)
--   Inference about identity is possible (e.g., through different variables)
--   De-identification can be reversed
-:::
 
 # De-identification Techniques
-
 
 ## 
 
@@ -233,7 +220,6 @@ df_suppressed
     -   Convert date of birth to age, or group into ranges
     -   Replace address with town or region
     -   Recategorize rare labels into “other” or “missing”
-    -   Abstract people or places in qualitative data (e.g., “Bob” to “\[colleague\]”)
 :::
 
 ## 
@@ -366,7 +352,7 @@ df_permuted
 
 > [*https://www.researchgate.net/figure/Trade-off-between-privacy-level-and-utility-level-of-data_fig1_357987903*](https://www.researchgate.net/figure/Trade-off-between-privacy-level-and-utility-level-of-data_fig1_357987903)
 
-## Brogan Inc. and NIHB Data
+## Case Study: Brogan Inc. and NIHB Data
 
 -   The Non-Insured Health Benefits (NIHB) database contains sensitive health data on First Nations use of services like prescriptions, dental care, and medical devices.
 -   In 2001, Health Canada began releasing de-identified NIHB pharmacy claims data to Brogan Inc. (a private health consulting firm).
@@ -457,58 +443,35 @@ Privacy models distinguish between three types of variables:
 
 -   Age and city are quasi-identifiers, and salary is considered a sensitive attribute.
 
-+-----+-----------+---------+
 | Age | City      | Salary  |
-+:====+:==========+:========+
-| 38  | Calgary   | 91,000  |
-+-----+-----------+---------+
-| 37  | Toronto   | 92,000  |
-+-----+-----------+---------+
-| 31  | Vancouver | 82,000  |
-+-----+-----------+---------+
-| 48  | Calgary   | 115,000 |
-+-----+-----------+---------+
-| 39  | Vancouver | 118,000 |
-+-----+-----------+---------+
-| 37  | Calgary   | 97,000  |
-+-----+-----------+---------+
-| 34  | Toronto   | 98,000  |
-+-----+-----------+---------+
-| 33  | Vancouver | 89,000  |
-+-----+-----------+---------+
-| 32  | Toronto   | 108,000 |
-+-----+-----------+---------+
-| 45  | Calgary   | 95,000  |
-+-----+-----------+---------+
+|:----|:----------|:--------|
+| 38  | Calgary   | 90,000–99,999  |
+| 37  | Toronto   | 90,000–99,999  |
+| 31  | Vancouver | 80,000–89,999    |
+| 48  | Calgary   | 110,000–119,999  |
+| 39  | Vancouver | 110,000–119,999  |
+| 37  | Calgary   | 90,000–99,999   |
+| 34  | Toronto   | 90,000–99,999   |
+| 33  | Vancouver | 80,000–89,999   |
+| 32  | Toronto   | 100,000–109,999|
+| 45  | Calgary   | 90,000–99,999  |
 
 ## $k=2$
 
 ::: {style="font-size:0.65em"}
-+-----------+-----------+-----------------+
 | Age Range | City      | Salary Range    |
-+===========+===========+=================+
+|-----------|-----------|-----------------|
 | 30–39     | Calgary   | 90,000–99,999   |
-+-----------+-----------+-----------------+
 | 30–39     | Toronto   | 90,000–99,999   |
-+-----------+-----------+-----------------+
 | 30–39     | Vancouver | 80,000–89,999   |
-+-----------+-----------+-----------------+
 | 40–49     | Calgary   | 110,000–119,999 |
-+-----------+-----------+-----------------+
 | 30–39     | Vancouver | 110,000–119,999 |
-+-----------+-----------+-----------------+
 | 30–39     | Calgary   | 90,000–99,999   |
-+-----------+-----------+-----------------+
 | 30–39     | Toronto   | 90,000–99,999   |
-+-----------+-----------+-----------------+
 | 30–39     | Vancouver | 80,000–89,999   |
-+-----------+-----------+-----------------+
 | 30–39     | Toronto   | 100,000–109,999 |
-+-----------+-----------+-----------------+
 | 40–49     | Calgary   | 90,000–99,999   |
-+-----------+-----------+-----------------+
 :::
-
 
 ## 
 
@@ -531,17 +494,17 @@ Given the data and treating condition as the sensitive attribute, which field(s)
 -   D. Generalize Age into age ranges (e.g., 20–29, 40–49) and ZIP code to first 3 digits (e.g., 130, 148)\
 -   E. It's already $k=3$ anonymous
 
-##
+## 
 
 ::: {style="font-size:0.7em; max-width: 400px; margin: auto;"}
-| Age | ZIP Code | Condition |
-|-----|----------|-----------|
-| 20–29  | 130    | Flu       |
-| 20–29  | 130    | Flu       |
-| 20-29  | 130    | Cold      |
-| 40–49  | 148    | Diabetes  |
-| 40–49 | 148    | Diabetes  |
-| 40–49  | 148    | Cancer    |
+| Age   | ZIP Code | Condition |
+|-------|----------|-----------|
+| 20–29 | 130      | Flu       |
+| 20–29 | 130      | Flu       |
+| 20-29 | 130      | Cold      |
+| 40–49 | 148      | Diabetes  |
+| 40–49 | 148      | Diabetes  |
+| 40–49 | 148      | Cancer    |
 :::
 
 ## $l$-diversity
@@ -561,29 +524,18 @@ Given the data and treating condition as the sensitive attribute, which field(s)
 -   Although these data are $2$-anonymous, we can still infer that any 30-39 year old from Calgary who participated earns between 90-99k.
 
 ::: {style="font-size:0.65em"}
-+-----------+-----------+-----------------+
 | Age Range | City      | Salary Range    |
-+===========+===========+=================+
+|-----------|-----------|-----------------|
 | 30–39     | Calgary   | 90,000–99,999   |
-+-----------+-----------+-----------------+
 | 30–39     | Toronto   | 90,000–99,999   |
-+-----------+-----------+-----------------+
 | 30–39     | Vancouver | 80,000–89,999   |
-+-----------+-----------+-----------------+
 | 40–49     | Calgary   | 110,000–119,999 |
-+-----------+-----------+-----------------+
 | 30–39     | Vancouver | 110,000–119,999 |
-+-----------+-----------+-----------------+
 | 30–39     | Calgary   | 90,000–99,999   |
-+-----------+-----------+-----------------+
 | 30–39     | Toronto   | 90,000–99,999   |
-+-----------+-----------+-----------------+
 | 30–39     | Vancouver | 80,000–89,999   |
-+-----------+-----------+-----------------+
 | 30–39     | Toronto   | 100,000–109,999 |
-+-----------+-----------+-----------------+
 | 40–49     | Calgary   | 90,000–99,999   |
-+-----------+-----------+-----------------+
 :::
 
 ## $l$-diversity
@@ -596,29 +548,18 @@ Given the data and treating condition as the sensitive attribute, which field(s)
 -   With $l=2$, that means that for each combination of Age Range and City, there are at least 2 distinct Salary Ranges.
 
 ::: {style="font-size:0.65em"}
-+-----------+---------+-----------------+
 | Age Range | City    | Salary Range    |
-+===========+=========+=================+
+|-----------|---------|-----------------|
 | 30–39     | \-      | 90,000–99,999   |
-+-----------+---------+-----------------+
 | 30–39     | \-      | 90,000–99,999   |
-+-----------+---------+-----------------+
 | 30–39     | \-      | 80,000–89,999   |
-+-----------+---------+-----------------+
 | 40–49     | Calgary | 110,000–119,999 |
-+-----------+---------+-----------------+
 | 30–39     | \-      | 110,000–119,999 |
-+-----------+---------+-----------------+
 | 30–39     | \-      | 90,000–99,999   |
-+-----------+---------+-----------------+
 | 30–39     | \-      | 90,000–99,999   |
-+-----------+---------+-----------------+
 | 30–39     | \-      | 80,000–89,999   |
-+-----------+---------+-----------------+
 | 30–39     | \-      | 100,000–109,999 |
-+-----------+---------+-----------------+
 | 40–49     | Calgary | 90,000–99,999   |
-+-----------+---------+-----------------+
 :::
 
 ## There are still issues...
@@ -632,15 +573,11 @@ Given the data and treating condition as the sensitive attribute, which field(s)
 -   Due to the similarity of the salary ranges, one can still infer that both individuals earn between \$90,000 and \$119,999.
 
 ::: {style="font-size:0.65em"}
-+-----------+---------+-----------------+
 | Age Range | City    | Salary Range    |
-+===========+=========+=================+
+|-----------|---------|-----------------|
 | 40–49     | Calgary | 110,000–119,999 |
-+-----------+---------+-----------------+
 | 40–49     | Calgary | 90,000–99,999   |
-+-----------+---------+-----------------+
 :::
-
 
 ## Differential privacy
 
@@ -657,7 +594,7 @@ Given the data and treating condition as the sensitive attribute, which field(s)
 
 <br>
 
-[ Source: <a href="https://medium.com/data-science/a-differential-privacy-example-for-beginners-ef3c23f69401">https://medium.com/data-science/a-differential-privacy-example-for-beginners-ef3c23f69401</a> ]{style="font-size: 0.8em;"}
+[Source: <a href="https://medium.com/data-science/a-differential-privacy-example-for-beginners-ef3c23f69401">https://medium.com/data-science/a-differential-privacy-example-for-beginners-ef3c23f69401</a>]{style="font-size: 0.8em;"}
 
 </center>
 

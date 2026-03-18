@@ -32,14 +32,14 @@
     "href": "index.html#what-happens-to-your-data",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "What Happens to Your Data?",
-    "text": "What Happens to Your Data?\nEvery time you use an app, visit a website, click on a link, fill out a survey or even just scroll on your device, your data is being:\n\n\nCollected - What you click, search, watch, like or buy\n\nAnalyzed - Used to predict your behaviour, interests or identity\n\nShared or Sold - Passed to advertisers, data brokers or other companies"
+    "text": "What Happens to Your Data?\nEvery time you use an app, visit a website, click on a link, fill out a survey or even just scroll on your device, your data is being:\n\n\nCollected\nAnalyzed\nShared or Sold"
   },
   {
     "objectID": "index.html#why-does-this-matter",
     "href": "index.html#why-does-this-matter",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "Why Does This Matter?",
-    "text": "Why Does This Matter?\n\nYou may be targeted with ads, content and potentially misinformation\n\nYou could be judged or profiled based on your data (even if it’s not accurate)\nYou don’t always know who has your data (or what they’re doing with it)\n\n\n\nSource: CBC News"
+    "text": "Why Does This Matter?\n\nYou may be targeted with ads, content and potentially misinformation\nYou could be judged or profiled based on your data\nYou don’t always know who has your data (or what they’re doing with it)\n\n\n\nSource: CBC News"
   },
   {
     "objectID": "index.html#personally-identifiable-information-pii",
@@ -98,13 +98,6 @@
     "text": "Identifiability Spectrum\n\nIdentifiability is a spectrum\nMore de-identified data = closer to anonymized\nLower identifiability = lower re-identification risk\n\n\n\nhttps://www.kdnuggets.com/2020/08/anonymous-anonymized-data.html"
   },
   {
-    "objectID": "index.html#when-are-data-truly-anonymous",
-    "href": "index.html#when-are-data-truly-anonymous",
-    "title": "An Introduction to Data Privacy in Practice",
-    "section": "When Are Data Truly anonymous?",
-    "text": "When Are Data Truly anonymous?\n\nOnly if re-identification would require unreasonable effort (factors include cost, time and available technology)\nData are not anonymous if:\n\n\n\nDirect identifiers are present\nIndividuals can be singled out from a group\nRe-identification is possible via linking datasets (mosaic effect)\nInference about identity is possible (e.g., through different variables)\nDe-identification can be reversed"
-  },
-  {
     "objectID": "index.html#section-2",
     "href": "index.html#section-2",
     "title": "An Introduction to Data Privacy in Practice",
@@ -130,7 +123,7 @@
     "href": "index.html#generalization",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "Generalization",
-    "text": "Generalization\n\n\nReduces detail or granularity in the data\nMakes individuals harder to single out\nExamples:\n\nConvert date of birth to age, or group into ranges\nReplace address with town or region\nRecategorize rare labels into “other” or “missing”\nAbstract people or places in qualitative data (e.g., “Bob” to “[colleague]”)"
+    "text": "Generalization\n\n\nReduces detail or granularity in the data\nMakes individuals harder to single out\nExamples:\n\nConvert date of birth to age, or group into ranges\nReplace address with town or region\nRecategorize rare labels into “other” or “missing”"
   },
   {
     "objectID": "index.html#section-3",
@@ -224,11 +217,11 @@
     "text": "Privacy vs. Utility Tradeoff\n\n\nhttps://www.researchgate.net/figure/Trade-off-between-privacy-level-and-utility-level-of-data_fig1_357987903"
   },
   {
-    "objectID": "index.html#brogan-inc.-and-nihb-data",
-    "href": "index.html#brogan-inc.-and-nihb-data",
+    "objectID": "index.html#case-study-brogan-inc.-and-nihb-data",
+    "href": "index.html#case-study-brogan-inc.-and-nihb-data",
     "title": "An Introduction to Data Privacy in Practice",
-    "section": "Brogan Inc. and NIHB Data",
-    "text": "Brogan Inc. and NIHB Data\n\nThe Non-Insured Health Benefits (NIHB) database contains sensitive health data on First Nations use of services like prescriptions, dental care, and medical devices.\nIn 2001, Health Canada began releasing de-identified NIHB pharmacy claims data to Brogan Inc. (a private health consulting firm).\nThough personal identifiers were removed, community identifiers remained, and First Nations were not informed until 2007.\nBrogan sold the data to pharmaceutical companies for commercial research and marketing\nHealth Canada justified the release by claiming no privacy interests remained since personally identifying information had been removed.\n\n\nKukutai, T., & Taylor, J. (2016). Indigenous data sovereignty: Toward an agenda. ANU press."
+    "section": "Case Study: Brogan Inc. and NIHB Data",
+    "text": "Case Study: Brogan Inc. and NIHB Data\n\nThe Non-Insured Health Benefits (NIHB) database contains sensitive health data on First Nations use of services like prescriptions, dental care, and medical devices.\nIn 2001, Health Canada began releasing de-identified NIHB pharmacy claims data to Brogan Inc. (a private health consulting firm).\nThough personal identifiers were removed, community identifiers remained, and First Nations were not informed until 2007.\nBrogan sold the data to pharmaceutical companies for commercial research and marketing\nHealth Canada justified the release by claiming no privacy interests remained since personally identifying information had been removed.\n\n\nKukutai, T., & Taylor, J. (2016). Indigenous data sovereignty: Toward an agenda. ANU press."
   },
   {
     "objectID": "index.html#discussion",
@@ -291,14 +284,14 @@
     "href": "index.html#example-data",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "Example data",
-    "text": "Example data\n\nAge and city are quasi-identifiers, and salary is considered a sensitive attribute.\n\n\n\n\n\n\n\n\n\nAge\nCity\nSalary\n\n\n\n\n38\nCalgary\n91,000\n\n\n37\nToronto\n92,000\n\n\n31\nVancouver\n82,000\n\n\n48\nCalgary\n115,000\n\n\n39\nVancouver\n118,000\n\n\n37\nCalgary\n97,000\n\n\n34\nToronto\n98,000\n\n\n33\nVancouver\n89,000\n\n\n32\nToronto\n108,000\n\n\n45\nCalgary\n95,000"
+    "text": "Example data\n\nAge and city are quasi-identifiers, and salary is considered a sensitive attribute.\n\n\n\n\nAge\nCity\nSalary\n\n\n\n\n38\nCalgary\n90,000–99,999\n\n\n37\nToronto\n90,000–99,999\n\n\n31\nVancouver\n80,000–89,999\n\n\n48\nCalgary\n110,000–119,999\n\n\n39\nVancouver\n110,000–119,999\n\n\n37\nCalgary\n90,000–99,999\n\n\n34\nToronto\n90,000–99,999\n\n\n33\nVancouver\n80,000–89,999\n\n\n32\nToronto\n100,000–109,999\n\n\n45\nCalgary\n90,000–99,999"
   },
   {
     "objectID": "index.html#k2",
     "href": "index.html#k2",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "\\(k=2\\)",
-    "text": "\\(k=2\\)\n\n\n\n\n\n\n\n\n\nAge Range\nCity\nSalary Range\n\n\n\n\n30–39\nCalgary\n90,000–99,999\n\n\n30–39\nToronto\n90,000–99,999\n\n\n30–39\nVancouver\n80,000–89,999\n\n\n40–49\nCalgary\n110,000–119,999\n\n\n30–39\nVancouver\n110,000–119,999\n\n\n30–39\nCalgary\n90,000–99,999\n\n\n30–39\nToronto\n90,000–99,999\n\n\n30–39\nVancouver\n80,000–89,999\n\n\n30–39\nToronto\n100,000–109,999\n\n\n40–49\nCalgary\n90,000–99,999"
+    "text": "\\(k=2\\)\n\n\n\n\nAge Range\nCity\nSalary Range\n\n\n\n\n30–39\nCalgary\n90,000–99,999\n\n\n30–39\nToronto\n90,000–99,999\n\n\n30–39\nVancouver\n80,000–89,999\n\n\n40–49\nCalgary\n110,000–119,999\n\n\n30–39\nVancouver\n110,000–119,999\n\n\n30–39\nCalgary\n90,000–99,999\n\n\n30–39\nToronto\n90,000–99,999\n\n\n30–39\nVancouver\n80,000–89,999\n\n\n30–39\nToronto\n100,000–109,999\n\n\n40–49\nCalgary\n90,000–99,999"
   },
   {
     "objectID": "index.html#section-5",
@@ -326,7 +319,7 @@
     "href": "index.html#section-7",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "",
-    "text": "Although these data are \\(2\\)-anonymous, we can still infer that any 30-39 year old from Calgary who participated earns between 90-99k.\n\n\n\n\n\n\n\n\n\n\nAge Range\nCity\nSalary Range\n\n\n\n\n30–39\nCalgary\n90,000–99,999\n\n\n30–39\nToronto\n90,000–99,999\n\n\n30–39\nVancouver\n80,000–89,999\n\n\n40–49\nCalgary\n110,000–119,999\n\n\n30–39\nVancouver\n110,000–119,999\n\n\n30–39\nCalgary\n90,000–99,999\n\n\n30–39\nToronto\n90,000–99,999\n\n\n30–39\nVancouver\n80,000–89,999\n\n\n30–39\nToronto\n100,000–109,999\n\n\n40–49\nCalgary\n90,000–99,999"
+    "text": "Although these data are \\(2\\)-anonymous, we can still infer that any 30-39 year old from Calgary who participated earns between 90-99k.\n\n\n\n\n\nAge Range\nCity\nSalary Range\n\n\n\n\n30–39\nCalgary\n90,000–99,999\n\n\n30–39\nToronto\n90,000–99,999\n\n\n30–39\nVancouver\n80,000–89,999\n\n\n40–49\nCalgary\n110,000–119,999\n\n\n30–39\nVancouver\n110,000–119,999\n\n\n30–39\nCalgary\n90,000–99,999\n\n\n30–39\nToronto\n90,000–99,999\n\n\n30–39\nVancouver\n80,000–89,999\n\n\n30–39\nToronto\n100,000–109,999\n\n\n40–49\nCalgary\n90,000–99,999"
   },
   {
     "objectID": "index.html#l-diversity-1",
@@ -340,14 +333,14 @@
     "href": "index.html#section-8",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "",
-    "text": "With \\(l=2\\), that means that for each combination of Age Range and City, there are at least 2 distinct Salary Ranges.\n\n\n\n\n\n\n\n\n\n\nAge Range\nCity\nSalary Range\n\n\n\n\n30–39\n-\n90,000–99,999\n\n\n30–39\n-\n90,000–99,999\n\n\n30–39\n-\n80,000–89,999\n\n\n40–49\nCalgary\n110,000–119,999\n\n\n30–39\n-\n110,000–119,999\n\n\n30–39\n-\n90,000–99,999\n\n\n30–39\n-\n90,000–99,999\n\n\n30–39\n-\n80,000–89,999\n\n\n30–39\n-\n100,000–109,999\n\n\n40–49\nCalgary\n90,000–99,999"
+    "text": "With \\(l=2\\), that means that for each combination of Age Range and City, there are at least 2 distinct Salary Ranges.\n\n\n\n\n\nAge Range\nCity\nSalary Range\n\n\n\n\n30–39\n-\n90,000–99,999\n\n\n30–39\n-\n90,000–99,999\n\n\n30–39\n-\n80,000–89,999\n\n\n40–49\nCalgary\n110,000–119,999\n\n\n30–39\n-\n110,000–119,999\n\n\n30–39\n-\n90,000–99,999\n\n\n30–39\n-\n90,000–99,999\n\n\n30–39\n-\n80,000–89,999\n\n\n30–39\n-\n100,000–109,999\n\n\n40–49\nCalgary\n90,000–99,999"
   },
   {
     "objectID": "index.html#there-are-still-issues",
     "href": "index.html#there-are-still-issues",
     "title": "An Introduction to Data Privacy in Practice",
     "section": "There are still issues…",
-    "text": "There are still issues…\n\nEven though the data is de-identified, some sensitive patterns can still leak through.\nIn the example we discussed, both individuals are grouped into the same age range and city.\nWhile they are in different salary ranges and exact values are hidden, the range is still quite narrow.\nDue to the similarity of the salary ranges, one can still infer that both individuals earn between $90,000 and $119,999.\n\n\n\n\n\n\n\n\n\n\nAge Range\nCity\nSalary Range\n\n\n\n\n40–49\nCalgary\n110,000–119,999\n\n\n40–49\nCalgary\n90,000–99,999"
+    "text": "There are still issues…\n\nEven though the data is de-identified, some sensitive patterns can still leak through.\nIn the example we discussed, both individuals are grouped into the same age range and city.\nWhile they are in different salary ranges and exact values are hidden, the range is still quite narrow.\nDue to the similarity of the salary ranges, one can still infer that both individuals earn between $90,000 and $119,999.\n\n\n\n\n\nAge Range\nCity\nSalary Range\n\n\n\n\n40–49\nCalgary\n110,000–119,999\n\n\n40–49\nCalgary\n90,000–99,999"
   },
   {
     "objectID": "index.html#differential-privacy",
@@ -411,12 +404,5 @@
     "title": "An Introduction to Data Privacy in Practice",
     "section": "Attribution",
     "text": "Attribution\n\n\nDSCI 200 - Navigating Data: Acquisition, Exploration and Management, UBC ⭐️\nData Privacy Handbook\nDSCI 541: Privacy, Ethics, and Security at UBC\nHarvard University Privacy Tools Project: Differential Privacy\nSTA 199: Introduction to Data Science and Statistical Thinking, Duke University"
-  },
-  {
-    "objectID": "index.html#section-11",
-    "href": "index.html#section-11",
-    "title": "An Introduction to Data Privacy in Practice",
-    "section": "",
-    "text": "Questions?"
   }
 ]
